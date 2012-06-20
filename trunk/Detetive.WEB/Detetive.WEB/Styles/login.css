@@ -1,0 +1,110 @@
+﻿body 
+{
+    background-color: #F0E8D1;
+    font-family: Verdana, Tahoma;
+    font-size: 8pt;
+    color: #690716;
+    width: 100%;
+}
+
+h1
+{
+    font-size: 28pt;
+    font-family: Stencil;
+}
+#page
+{
+    width: 1600px;
+    height: 900px;
+    background-image: url('../Images/tela01.jpg');
+}
+.btable
+{
+    margin: 0;
+    padding: 0;
+    border-collapse: collapse;
+    font-family: arial;
+}
+.bll
+{
+    margin: 0;
+    padding: 0;
+    width: 5px;
+    background-image:url('../../images/block_left.jpg');
+    background-repeat: no-repeat;
+}
+.blc
+{
+    margin: 0;
+       padding: 0;
+    background-image:url('../../images/block_title.jpg');
+    background-repeat: repeat-x;
+}
+.blr
+{
+    margin: 0;
+    padding: 0;
+    width: 5px;
+    background-image:url('../../images/block_right.jpg');
+    background-repeat: no-repeat;
+}
+.blkt
+{
+    margin: 5px 5px 0 5px;
+    padding: 0;
+    height: 21px;
+    width: 100%;
+    color: #000000;
+    font-family: verdana;
+    font-size: 8pt;
+    font-weight: bold;
+    text-align: left;
+    border: solid 1px #000000;
+}
+.blkc
+{
+    margin: 0;
+    padding: 5px;
+    width: 95%;
+    border: solid 1px #000000;
+    background-color: #F0E8D1;
+}
+.blkc_h1
+{
+    color: #424242;
+    font-size: 11pt;
+    font-weight: bold;
+    padding-left: 5px;
+}
+
+.err
+{
+    font-size: 8pt;
+    font-weight: bold;
+	margin: 7px 0 7px 0;
+	padding: 5px;
+	color: #A00000;
+	background-color: #FFFFB0;
+}
+.label
+{
+    font-size: 8pt;
+    font-family: Verdana, Tahoma;
+    font-weight: bold;
+}
+.header
+{
+    margin: 0;
+    padding: 5px;
+    width: 95%;
+    border: solid 1px #000000;
+    background-color: #690716;
+    color: White;
+    font-weight: bold;
+    font-size: 10pt;
+}
+.error
+{
+	color: Red;
+	font-weight: bold;
+}

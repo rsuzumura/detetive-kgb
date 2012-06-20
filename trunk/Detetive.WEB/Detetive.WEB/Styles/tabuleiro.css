@@ -1,0 +1,331 @@
+﻿body 
+{
+	background-color: #D8C88C;
+}
+
+.body
+{
+	background-position: center center;
+	width: 1600px;
+	height: 900px;
+	background-image: url('../Images/tela01.jpg');
+	background-repeat: no-repeat;
+}
+
+.top
+{
+	width: 100%;
+	height: 130px;
+}
+
+.table
+{
+	background-image: url('../Images/tabuleiro.jpg');
+	background-repeat: no-repeat;
+	padding-left: 2px;
+}
+
+.gameArea
+{
+}
+
+.gameArea tr
+{
+	height: 30px;
+}
+
+.gameArea td
+{
+	width: 30px;
+}
+
+.null
+{
+	width: 30px;
+}
+
+.room
+{
+	/*border: solid 1px #B0935B;*/
+	padding: 1px;
+}
+
+.roomArea
+{
+	background-color: Green;
+	padding: 1px;
+}
+
+.step
+{
+	/*background-color: #FDEAA8;*/
+	/*border: solid 1px Transparent;*/
+	padding: 1px;
+}
+
+.yellow
+{
+	background-color: Yellow;
+	padding: 1px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.yellowMove
+{
+	background-color: Yellow;
+	padding: 1px;
+	background-image: url('../Images/Icons/ico_Dwight.png');
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.purple
+{
+	background-color: Purple;
+	padding: 1px;
+}
+.purpleMove
+{
+	background-color: Purple;
+	padding: 1px;
+	background-image: url('../Images/Icons/ico_Hartigan.png');
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.white
+{
+	background-color: #FFFFFF;
+	padding: 1px;
+}
+.whiteMove
+{
+	background-color: #FFFFFF;
+	padding: 1px;
+	background-image: url('../Images/Icons/ico_Shellie.png');
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.blue
+{
+	background-color: Blue;
+	padding: 1px;
+}
+.blueMove
+{
+	background-color: Blue;
+	padding: 1px;
+	background-image: url('../Images/Icons/ico_Nancy.png');
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.pink
+{
+	background-color: #FAAFBE;
+	padding: 1px;
+}
+.pinkMove
+{
+	background-color: #FAAFBE;
+	padding: 1px;
+	background-image: url('../Images/Icons/ico_Becky.png');
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.green
+{
+	background-color: Green;
+	padding: 1px;
+}
+.greenMove
+{
+	background-color: Green;
+	padding: 1px;
+	background-image: url('../Images/Icons/ico_Marv.png');
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.enableArea
+{
+	background-color: Aqua;
+	border: solid 1px #B0935B;
+	padding: 0px;
+}
+
+.selected
+{
+	background-color: #F0F3F8;
+	border: solid 1px #B0935B;
+	padding: 0px;
+}
+
+.titleMenu
+{
+	border-radius: 10px;
+	border: solid 2px #B18B4D;
+	padding: 5px;
+	font-family: Impact;
+	font-size: 14pt;
+	color: #E5C791;
+	background-color: #683807;
+}
+
+.gridCheck
+{
+	border: solid 1px #634102;
+}
+.lineCheck
+{
+	border: solid 1px #634102;
+}
+.check
+{
+	border: solid 1px #634102;
+	font-family: Tahoma;
+	font-size: 10pt;
+	font-weight: bold;
+}
+.menu
+{
+	background-color: #D6BE82;
+}
+
+.selectedImage
+{
+	padding-bottom: 10px;
+	border: solid 1px #545343;
+}
+
+.items
+{
+	font-family: Tahoma;
+	font-size: 10pt;
+	font-weight: bold;
+}
+
+.headTitle
+{
+	font-family: Tahoma;
+	font-weight: bold;
+	font-size: 10pt;
+	border: solid 1px #634102;
+}
+
+div.background
+{
+	top:0;
+    left:0;
+    position:absolute;
+    padding:0;
+    margin:0;
+    width:100%;
+    height:1200px;
+    background-color:#000000;
+    opacity:0.6;
+    z-index:888;
+}
+
+div.backAccuse
+{
+	top:0;
+    left:0;
+    position:absolute;
+    padding:0;
+    margin:0;
+    width:100%;
+    height:1200px;
+    background-color:#000000;
+    opacity:0.6;
+    z-index:888;
+}
+
+div.accusePanel
+{
+    padding: 4px 10px 4px 10px;
+    position: fixed;
+    z-index: 999;
+    font-family:Verdana;
+    width: 771px;
+    min-height:752px;
+    background-image: url('../Images/comodo_acusacao01_limpo.jpg');
+    background-repeat: no-repeat;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    text-align: left;
+}
+
+div.dicePanel
+{
+    padding: 4px 10px 4px 10px;
+    position: fixed;
+    z-index: 999;
+    font-family:Verdana;
+    width: 430px;
+    min-height:160px;
+    color: #00335e;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    -moz-box-shadow: 0px 0px 11px #000000;
+    -webkit-box-shadow: 0px 0px 11px #000000;
+    box-shadow: 0px 0px 11px #000000;
+}
+
+.spaceHeader
+{
+	height: 70px;
+}
+
+.spaceLeft
+{
+	float: left;
+	width: 560px;
+}
+
+.imageLocal
+{
+}
+
+.headerSuspect
+{
+	height: 40px;
+}
+
+.suspects
+{
+	margin-left: 40px;
+}
+
+.suspects tr td
+{
+	text-align: center;
+}
+
+.spaceWeapons
+{
+	height: 50px;
+}
+
+.spaceWeapons
+{
+	height: 45px;
+}
+
+.button
+{
+	font-weight: bold;
+	font-family: Arial Black;
+	background-color: #D65703;
+	color: #FFFFFF;
+	height: 40px; 
+}
+
+.button:hover
+{
+	background-color: #040506;
+}

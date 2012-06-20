@@ -1,0 +1,230 @@
+﻿body 
+{
+    background-color: #F0E8D1;
+    font-family: Verdana, Tahoma;
+    font-size: 8pt;
+    color: #000000;
+    width: 100%;
+}
+
+h1
+{
+    font-size: 28pt;
+    font-family: Stencil;
+}
+.gridheader
+{
+    background-color: #FFFFFF;
+}
+.gridrow
+{
+    background-color: #AB662F;
+    color: #FFFFFF;
+}
+.gridalt
+{
+    background-color: #BE9C52;
+    color: #FFFFFF;
+}
+
+#page
+{
+    width: 1600px;
+    height: 900px;
+    background-image: url('../Images/tela01.jpg');
+}
+#title
+{
+    height: 150px;
+}
+#logindisplay
+{
+    border-top-style: double;
+    border-bottom-style: double;
+    color: #000000;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: right;
+    font-size: 9pt;
+    font-weight: bold;
+}
+#main
+{
+    margin-top: 10px;
+}
+#menucontainer
+{
+    text-align: left;
+    width: 180px;
+    float: left;
+}
+#contentcontainer
+{
+    width: 80%;
+    height: 690px;
+    float: right;
+    text-align: left;
+}
+.headerLeft
+{
+    background-image: url('images/detetive_100.jpg');
+    background-repeat: no-repeat;
+    width: 141px;
+    height: 100px;
+}
+.headerRight
+{
+    background-image: url('images/background_header.jpg');
+    background-repeat: repeat-x;
+    width: 1150px;
+    height: 100px;
+}
+#footer
+{
+    width: 1600px;
+    height: 100px;
+    clear: both;
+    text-align: center;
+    background-image: url('images/Timbre_KGB.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.applemenu 
+{
+    margin: 5px 0;
+    padding: 0;
+    width: auto; /*largura do menu*/
+}
+
+/*---títulos do menu---*/
+.applemenu div.silverheader a 
+{
+    color: #690716; /*cor dos links dos títulos */
+    font-weight: bold;
+    background: transparent; /* cor de fundo dos títulos*/
+    -moz-border-radius:3px;
+    -khtml-border-radius:3px;
+    -webkit-border-radius:3px;
+    border-radius:3px;
+    border-top:1px solid #690716;  /* borda no topo*/
+    /*border-bottom:1px solid #CCC;  /* borda no bottom*/
+    font-size: 8pt;  /* tamanho da fonte dos títulos*/
+    font-family:Verdana, Tahoma;  /* tipo de fonte dos títulos*/
+    display: block;
+    position: relative;
+    width: auto;
+    padding: 5px 0 ;
+    padding-left: 8px;
+    text-decoration: none;
+}
+                
+.applemenu div.silverheader a:visited, .applemenu div.silverheader a:active
+{
+    color: #690716; /* cor dos links dos títulos ativos e visitados */
+    font-weight: bold;
+}
+
+.applemenu div.selected a, .applemenu div.silverheader a:hover
+{
+    background-color: #C1D2EE; /* cor de fundo dos títulos no estado hover*/
+    color: #FFF;/*cor dos links dos títulos no estado hover*/
+    font-weight: bold;
+}
+                
+/*---conteúdo do menu---*/
+.applemenu div.submenu
+{
+    background-color:#F4F4F4; /*cor de fundo do conteúdo*/
+    color: #690716; /* cor do texto do conteúdo*/
+    padding: 5px;
+    height:auto;
+}
+.validation-summary-errors
+{
+    color: Red;
+    font-weight: bold;
+}
+
+.edit
+{
+    background-image: url('../images/Pen.gif');
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.label
+{
+    font-family: Verdana;
+    font-size: 8pt;
+    font-weight: bold;
+}
+
+.pink
+{
+	background-color: #FAAFBE;
+}
+.blue
+{
+	background-color: #0000FF;
+}
+.white
+{
+	background-color: #FFFFFF;
+}
+.yellow
+{
+	background-color: #FFFF00;
+}
+.purple
+{
+	background-color: #800080;
+}
+.green
+{
+	background-color: #008000;
+}
+.error
+{
+	color: Red;
+	font-weight: bold;
+}
+
+.link
+{
+	font-weight: bold;
+	text-decoration: none;
+}
+.mainTitle
+{
+	font-family: Verdana;
+	color: #AA0000;
+	font-weight: bold;
+	font-size: 12pt;	     
+}
+.room
+{
+	padding: 30px;
+	border: 2px solid black;
+	text-align: left;
+	font-weight: bold;
+}
+.btn
+{
+	border: solid 1px #000000;
+	background-color: #F78C08;
+	color: #FFFFFF;
+	height: 40px;
+	font-family: Arial Black;
+	font-weight: bold;
+}
+.btn:hover
+{
+	border: solid 1px #000000;
+	background-color: #941003;
+	color: #FFFFFF;
+	height: 40px;
+	font-family: Arial Black;
+	font-weight: bold;
+	cursor: hand;
+}

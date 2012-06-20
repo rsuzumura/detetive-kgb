@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Detetive.WEB", "Detetive.WEB\Detetive.WEB.csproj", "{F7819551-249D-4733-ACEC-861DAD96A094}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Detetive.BOL", "..\Core\Detetive.BOL\Detetive.BOL.csproj", "{9B95551E-8C36-490C-95A7-AC5EB9E740AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Detetive.SEC", "..\Core\Detetive.SEC\Detetive.SEC.csproj", "{30B73D29-7C05-4582-A34C-0D171830D1E9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F7819551-249D-4733-ACEC-861DAD96A094}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7819551-249D-4733-ACEC-861DAD96A094}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7819551-249D-4733-ACEC-861DAD96A094}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7819551-249D-4733-ACEC-861DAD96A094}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B95551E-8C36-490C-95A7-AC5EB9E740AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B95551E-8C36-490C-95A7-AC5EB9E740AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B95551E-8C36-490C-95A7-AC5EB9E740AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B95551E-8C36-490C-95A7-AC5EB9E740AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30B73D29-7C05-4582-A34C-0D171830D1E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30B73D29-7C05-4582-A34C-0D171830D1E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30B73D29-7C05-4582-A34C-0D171830D1E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30B73D29-7C05-4582-A34C-0D171830D1E9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="D:\Projects\Teste\WebCompiled" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="Images/Cards/person_becky.jpg" publishTime="06/16/2012 00:40:10" />
+    <file relUrl="Default.aspx" publishTime="06/18/2012 16:18:37" />
+    <file relUrl="Images/Cards/local_hall.jpg" publishTime="06/16/2012 00:40:10" />
+    <file relUrl="bin/Detetive.BOL.dll" publishTime="06/18/2012 16:07:26" />
+    <file relUrl="Images/tela01.jpg" publishTime="06/16/2012 00:40:10" />
+    <file relUrl="Images/Cards/arma_revolver.jpg" publishTime="06/16/2012 00:40:10" />
+    <file relUrl="Images/Cards/local_sala de jogos.jpg" publishTime="06/16/2012 00:40:10" />
+    <file relUrl="Images/Icons/ico_Marv.png" publishTime="06/16/2012 00:40:10" />
+    <file relUrl="Styles/Site.css" publishTime="06/14/2012 20:28:58" />
+    <file relUrl="Images/Cards/person_shellie.jpg" publishTime="06/16/2012 00:40:10" />
+    <file relUrl="Images/dado_5.gif" publishTime="06/16/2012 00:40:10" />
+    <file relUrl="WaitRoom.aspx" publishTime="06/18/2012 11:30:52" />
+    <file relUrl="Rooms.aspx" publishTime="06/18/2012 11:38:05" />
+    <file relUrl="Main.Master" publishTime="06/18/2012 04:39:16" />
+    <file relUrl="Images/Cards/person_dwight.jpg" publishTime="06/16/2012 00:40:10" />
+    <file relUrl="Global.asax" publishTime="06/14/2012 20:28:58" />
+    <file relUrl="Styles/msgBoxLight.css" publishTime="06/18/2012 03:17:58" />
+    <file relUrl="Tabuleiro.aspx" publishTime="06/16/2012 16:34:11" />
+    <file relUrl="Images/Icons/ico_Hartigan.png" publishTime="06/16/2012 00:40:10" />
+    <file relUrl="Images/dado_2.gif" publishTime="06/16/2012 00:40:10" />
+    <file relUrl="Scripts/jquery-1.4.1.min.js" publishTime="06/14/2012 20:28:58" />
+    <file relUrl="Images/dado_animado_menor.gif" publishTime="06/16/2012 00:40:10" />
+    <file relUrl="Images/Cards/person_nancy.jpg" publishTime="06/16/2012 00:40:10" />
+    <file relUrl="Images/Cards/person_marv.jpg" publishTime="06/16/2012 00:40:10" />
+    <file relUrl="Scripts/jquery-1.4.1.js" publishTime="06/14/2012 20:28:58" />
+    <file relUrl="Images/Cards/arma_corda.jpg" publishTime="06/16/2012 00:40:10" />
+    <file relUrl="Images/Icons/ico_Becky.png" publishTime="06/16/2012 00:40:10" />
+    <file relUrl="Scripts/ddaccordion.js" publishTime="06/18/2012 03:46:37" />
+    <file relUrl="Rules.aspx" publishTime="06/18/2012 04:38:26" />
+    <file relUrl="Images/dado_3.gif" publishTime="06/16/2012 00:40:10" />
+    <file relUrl="Images/Cards/local_quarto hospede.jpg" publishTime="06/16/2012 00:40:10" />
+    <file relUrl="Images/Cards/local_cozinha.jpg" publishTime="06/16/2012 00:40:10" />
+    <file relUrl="Images/dado_1.gif" publishTime="06/16/2012 00:40:10" />
+    <file relUrl="Scripts/jquery-1.4.1-vsdoc.js" publishTime="06/14/2012 20:28:58" />
+    <file relUrl="Images/Cards/arma_martelo.jpg" publishTime="06/16/2012 00:40:10" />
+    <file relUrl="bin/Detetive.WEB.pdb" publishTime="06/18/2012 16:20:35" />
+    <file relUrl="bin/Detetive.BOL.pdb" publishTime="06/18/2012 16:07:26" />
+    <file relUrl="Images/Cards/local_sala de estar.jpg" publishTime="06/16/2012 00:40:10" />
+    <file relUrl="Images/top_secret_min.gif" publishTime="06/16/2012 00:40:09" />
+    <file relUrl="Images/Cards/local_banheiro.jpg" publishTime="06/16/2012 00:40:10" />
+    <file relUrl="User_Create.aspx" publishTime="06/18/2012 03:25:50" />
+    <file relUrl="Images/Cards/arma_faca.jpg" publishTime="06/16/2012 00:40:10" />
+    <file relUrl="Styles/login.css" publishTime="06/18/2012 03:26:53" />
+    <file relUrl="Images/Icons/ico_Shellie.png" publishTime="06/16/2012 00:40:10" />
+    <file relUrl="Images/Cards/arma_chave inglesa.jpg" publishTime="06/16/2012 00:40:10" />
+    <file relUrl="User_ChangePassword.aspx" publishTime="06/18/2012 03:29:46" />
+    <file relUrl="Images/dado_6.gif" publishTime="06/16/2012 00:40:10" />
+    <file relUrl="Images/Cards/local_sala de estudo.jpg" publishTime="06/16/2012 00:40:10" />
+    <file relUrl="Images/Icons/ico_Dwight.png" publishTime="06/16/2012 00:40:10" />
+    <file relUrl="Scripts/jquery.msgBox.min.js" publishTime="06/18/2012 03:13:41" />
+    <file relUrl="bin/Detetive.SEC.dll" publishTime="06/18/2012 02:38:21" />
+    <file relUrl="Styles/master.css" publishTime="06/18/2012 04:53:03" />
+    <file relUrl="Images/Cards/person_hartigan.jpg" publishTime="06/16/2012 00:40:10" />
+    <file relUrl="bin/Detetive.SEC.pdb" publishTime="06/18/2012 02:38:21" />
+    <file relUrl="Scripts/jquery.msgBox.js" publishTime="06/18/2012 03:13:41" />
+    <file relUrl="Images/Cards/arma_castical.jpg" publishTime="06/16/2012 00:40:10" />
+    <file relUrl="Images/tabuleiro.jpg" publishTime="06/16/2012 00:40:10" />
+    <file relUrl="User_LostPassword.aspx" publishTime="06/18/2012 03:15:00" />
+    <file relUrl="Images/Icons/ico_Nancy.png" publishTime="06/16/2012 00:40:10" />
+    <file relUrl="Images/Cards/local_quarto.jpg" publishTime="06/16/2012 00:40:10" />
+    <file relUrl="bin/Detetive.WEB.dll" publishTime="06/18/2012 16:20:35" />
+    <file relUrl="Styles/tabuleiro.css" publishTime="06/16/2012 00:22:24" />
+    <file relUrl="Images/Cards/local_sala de jantar.jpg" publishTime="06/16/2012 00:40:10" />
+    <file relUrl="Images/tela04.jpg" publishTime="06/16/2012 00:40:10" />
+    <file relUrl="User_Login.aspx" publishTime="06/18/2012 03:32:36" />
+    <file relUrl="Images/dado_4.gif" publishTime="06/16/2012 00:40:10" />
+    <file relUrl="Images/comodo_acusacao01_limpo.jpg" publishTime="06/16/2012 00:40:10" />
+    <file relUrl="Web.config" publishTime="06/18/2012 16:11:55" />
+  </publishProfile>
+</publishData>

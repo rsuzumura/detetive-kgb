@@ -1,0 +1,64 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="Detetive.WEB.Main" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link rel="Stylesheet" type="text/css" href="Styles/master.css" />
+    <script type="text/javascript" src="Scripts/jquery-1.4.1.js"></script>
+    <script type="text/javascript" src="Scripts/jquery.msgBox.js"></script>
+    <link rel="Stylesheet" type="text/css" href="Styles/msgBoxLight.css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div align="center">
+        <div id="page">
+            <div id="header">
+                <div id="title">
+                </div>
+                <table cellpadding="0" cellspacing="0" style="width: 100%;">
+                    <tr>
+                        <td style="width: 100px;">
+                            &nbsp;
+                        </td>
+                        <td>
+                            <div id="logindisplay">
+                                Bem vindo,
+                                <%: Page.User.Identity.Name %>!&nbsp;&nbsp;
+                            </div>
+                        </td>
+                        <td style="width: 100px;">
+                            &nbsp;
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <br />
+            <div>
+                <table border="1" cellpadding="3" cellspacing="1" style="width: 700px; text-align: center">
+                    <tr>
+                        <td style="width: 200px;">
+                            <asp:HyperLink ID="hlkRooms" runat="server" Text="Salas de Jogo" NavigateUrl="~/Rooms.aspx"
+                                CssClass="link"></asp:HyperLink>
+                        </td>
+                        <td style="width: 200px;">
+                            <asp:HyperLink ID="hlkRules" runat="server" Text="Regras do Jogo" NavigateUrl="~/Rules.aspx"
+                                CssClass="link"></asp:HyperLink>
+                        </td>
+                        <td style="width: 200px;">
+                            <asp:HyperLink ID="hlkExit" runat="server" Text="Sair" NavigateUrl="~/User_Login.aspx"
+                                CssClass="link"></asp:HyperLink>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <br />
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>        
+    </div>
+    </form>
+</body>
+</html>
