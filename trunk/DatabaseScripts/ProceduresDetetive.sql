@@ -927,4 +927,82 @@ begin
 end;
 go
 
-select * from det_GamePlayerCards order by gpc_GamePlayer
+declare @o varchar(100); set @o = 'det_p_NextPlayerCards';
+if object_id(@o, 'P') is not null begin
+	declare @d nvarchar(250); set @d = 'drop procedure ' + @o;
+	execute sp_executesql @d;
+end;
+go
+create procedure det_p_NextPlayerCards(
+	@color int,
+	@actor int,
+	@weapon int,
+	@room int
+) as
+begin
+	if exists(
+		select 1 from
+		det_GamePlayerCards
+		inner join det_GamePlayers on gpc_GamePlayer = gap_GamePlayer
+		inner join det_Actors on act_Actor = gap_Actor
+	where
+		act_Color > @color and
+		(
+			(gpc_Subtype = @actor and gpc_type = 1) or
+			(gpc_Subtype = @weapon and gpc_type = 2) or
+			(gpc_Subtype = @room and gpc_type = 3)
+		)
+	)
+	begin
+		select
+			[Card].*
+		from (
+			select
+				gap_Username [Username],
+				gpc_Type [Type],
+				gpc_Subtype [Subtype],
+				act_Color [Color]
+			from
+				det_GamePlayerCards
+				inner join det_GamePlayers on gpc_GamePlayer = gap_GamePlayer
+				inner join det_Actors on act_Actor = gap_Actor
+			where
+				act_Color > @color and
+				(
+					(gpc_Subtype = @actor and gpc_type = 1) or
+					(gpc_Subtype = @weapon and gpc_type = 2) or
+					(gpc_Subtype = @room and gpc_type = 3)
+				)
+		) [Card]
+		order by
+			[Color]
+		for xml auto, elements, root('Cards');
+	end	
+	else
+	begin
+		select
+			[Card].*
+		from (
+			select
+				gap_Username [Username],
+				gpc_Type [Type],
+				gpc_Subtype [Subtype],
+				act_Color [Color]
+			from
+				det_GamePlayerCards
+				inner join det_GamePlayers on gpc_GamePlayer = gap_GamePlayer
+				inner join det_Actors on act_Actor = gap_Actor
+			where
+				act_Color <> @color and
+				(
+					(gpc_Subtype = @actor and gpc_type = 1) or
+					(gpc_Subtype = @weapon and gpc_type = 2) or
+					(gpc_Subtype = @room and gpc_type = 3)
+				)
+		) [Card]
+		order by
+			[Color]
+		for xml auto, elements, root('Cards');	
+	end
+end;
+go
