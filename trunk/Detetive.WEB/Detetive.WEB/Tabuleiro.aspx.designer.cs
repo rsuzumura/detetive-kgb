@@ -40,6 +40,15 @@ namespace Detetive.WEB {
         protected global::System.Web.UI.Timer TimerUpdateGame;
         
         /// <summary>
+        /// TimerGetCards control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.Timer TimerGetCards;
+        
+        /// <summary>
         /// UpdatePanelTable control.
         /// </summary>
         /// <remarks>
@@ -103,6 +112,24 @@ namespace Detetive.WEB {
         protected global::System.Web.UI.WebControls.HiddenField hdnWeapon;
         
         /// <summary>
+        /// hdnShowType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdnShowType;
+        
+        /// <summary>
+        /// hdnShowId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdnShowId;
+        
+        /// <summary>
         /// btnClicker control.
         /// </summary>
         /// <remarks>
@@ -128,6 +155,24 @@ namespace Detetive.WEB {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnMakeAccuse;
+        
+        /// <summary>
+        /// btnSetTimer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSetTimer;
+        
+        /// <summary>
+        /// btnShowCard control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnShowCard;
         
         /// <summary>
         /// t0_0 control.

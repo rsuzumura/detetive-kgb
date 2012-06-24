@@ -263,8 +263,6 @@ function hideAccuse() {
     $("div.accusePanel,div.backAccuse").remove();
 }
 
-
-
 function verifPos(x, y, i, j) {
     if ((x + i < 25) && (y + j < 24) && (detetive.MAP[x + i][y + j] == 1 || parseInt(detetive.MAP[x + i][y + j] / 10) == 8)) {
         if (test(x + i, y + j)) {
@@ -354,7 +352,6 @@ function loadCards() {
     }*/
 }
 
-
 function getMAP(array) {
     var lines = array.split('|');
     for (var i = 0; i < lines.length - 1; i++) {
@@ -363,4 +360,101 @@ function getMAP(array) {
             detetive.MAP[i][j] = parseInt(cell[j]);
         }
     }
+}
+
+function showLoad() {
+    var divBackGround = "<div class=\"background\"></div>";
+    $("body").append(divBackGround + "<div class=\"loader\" align=\"center\">" + "<div>Aguardando Seleção de Carta...<div>" + "<div><img id=\"loader\" src=\"Images/ajax-loader.gif\" alt=\"\" /><div>" + "</div>");
+    $("div.background").css({ opacity: 0.3 });
+    var width = $("div.loader").width();
+    var height = $("div.loader").height();
+    var windowHeight = $(window).height();
+    var windowWidth = $(window).width();
+    var top = windowHeight / 2 - height / 2;
+    var left = windowWidth / 2 - width / 2;
+    $("div.loader").css({ opacity: 0, top: top - 50, left: left });
+    $("div.loader").animate({ opacity: 1, "top": top, "left": left }, 200);
+}
+
+function showCards(imagetags, radioTags) {
+    var divBackGround = "<div class=\"backAccuse\"></div>";
+    $("body").append(divBackGround + "<div class=\"showCard\">" + "<div class=\"showTitle\">" +
+                "&nbsp;Selecione uma carta:" +
+            "</div>" +
+            "<div>" +
+                "<table class=\"suspects\" cellspacing=\"10\">" +
+                    "<tr>" +
+                        imagetags +
+                    "</tr>" +
+                    "<tr>" +
+                        radioTags +
+                    "</tr>" +
+                "</table>" +
+            "</div>" +
+            "<div class=\"spaceButton\">&nbsp;</div>" +
+            "<div align=\"center\">" +
+                "<input type=\"button\" value=\"MOSTRAR CARTA SELECIONADA\" class=\"button\" onclick=\"showCard();\" />" +
+            "</div>" + "</div>");
+    $("div.backAccuse").css({ opacity: 0.3 });
+    var width = $("div.showCard").width();
+    var height = $("div.showCard").height();
+    var windowHeight = $(window).height();
+    var windowWidth = $(window).width();
+    var top = windowHeight / 2 - height / 2;
+    var left = windowWidth / 2 - width / 2;
+    $("div.showCard").css({ opacity: 0, top: top - 50, left: left });
+    $("div.showCard").animate({ opacity: 1, "top": top, "left": left }, 200);
+}
+function showCard() {
+    var type = 0;
+    var cardId = 0;
+    var button = document.getElementById('btnShowCard');
+    var hdnShowType = document.getElementById('hdnShowType');
+    var hdnShowId = document.getElementById('hdnShowId');
+    var rdoCards = document.getElementsByName("susp");
+    for (var i = 0; i < rdoCards.length; i++) {
+        if (rdoCards[i].checked) {
+            cardId = parseInt(rdoCards[i].value);
+            if (rdoCards[i].id.indexOf('Actor') != -1)
+                type = 1;
+            else if (rdoCards[i].id.indexOf('Weapon') != -1)
+                type = 2;
+            else if (rdoCards[i].id.indexOf('Room') != -1)
+                type = 3;
+            break;
+        }
+    }
+    if (cardId > 0) {
+        hdnShowId.value = cardId.toString();
+        hdnShowType.value = type.toString();
+        //hideAccuse();
+        button.click();
+        $("div.showCard,div.backAccuse").remove();
+    } else {
+        var msg = "";
+        msg += cardId > 0 ? "" : "- Escolha uma carta.\n";
+        alert(msg);
+    }
+}
+
+function showImage(imageName) {
+    var divBackGround = "<div class=\"backAccuse\"></div>";
+    $("body").append(divBackGround + "<div class=\"divCard\">" + "<div class=\"divLabel\">" +
+                "Carta mostrada:" +
+            "</div>" +
+            "<div>" +
+                "<img src=\"Images/Cards/" + imageName + "\" id=\"imgShow\" alt=\"\" width=\"400px\" style=\"border-style: none;\" />" +
+            "<div class=\"spaceButton\">&nbsp;</div>" +
+            "<div align=\"center\">" +
+                "<input type=\"button\" value=\"OK\" class=\"button\" onclick=\"showCard();\" />" +
+            "</div>" + "</div>");
+    $("div.backAccuse").css({ opacity: 0.3 });
+    var width = $("div.divCard").width();
+    var height = $("div.divCard").height();
+    var windowHeight = $(window).height();
+    var windowWidth = $(window).width();
+    var top = windowHeight / 2 - height / 2;
+    var left = windowWidth / 2 - width / 2;
+    $("div.divCard").css({ opacity: 0, top: top - 50, left: left });
+    $("div.divCard").animate({ opacity: 1, "top": top, "left": left }, 200);
 }

@@ -17,6 +17,9 @@ namespace Detetive.BOL
         public SqlString Position { get; set; }
         public SqlInt32 Status { get; set; }
         public SqlInt32 Color { get; set; }
+        public SqlInt32 AccuseActorId { get; set; }
+        public SqlInt32 AccuseWeaponId { get; set; }
+        public SqlInt32 AccuseRoomId { get; set; }
 
         public void Add()
         {
@@ -56,6 +59,13 @@ namespace Detetive.BOL
         {
             bool r;
             SqlXmlRun.Execute("det_p_EnableStartButton", out r, new SqlXmlParams("game", gameId));
+            return r;
+        }
+
+        public static bool SetShowCards(int color, int actorId, int weaponId, int roomId)
+        {
+            bool r;
+            SqlXmlRun.Execute("det_p_NextPlayerCards", out r, new SqlXmlParams("color", color, "actor", actorId, "weapon", weaponId, "room", roomId));
             return r;
         }
     }

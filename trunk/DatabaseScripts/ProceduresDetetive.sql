@@ -597,7 +597,10 @@ begin
 			gap_Actor [ActorId],
 			gap_Enabled [Enabled],
 			gap_Position [Position],
-			gap_Status [Status]
+			gap_Status [Status],
+			gap_AccuseActor [AccuseActorId],
+			gap_AccuseWeapon [AccuseWeaponId],
+			gap_AccuseRoom [AccuseRoomId]
 		from
 			det_GamePlayers
 		where
@@ -629,7 +632,10 @@ begin
 			gap_Enabled [Enabled],
 			gap_Position [Position],
 			gap_Status [Status],
-			act_Color [Color]
+			act_Color [Color],
+			gap_AccuseActor [AccuseActorId],
+			gap_AccuseWeapon [AccuseWeaponId],
+			gap_AccuseRoom [AccuseRoomId]
 		from
 			det_GamePlayers
 			inner join det_Actors on act_Actor = gap_Actor
@@ -735,7 +741,10 @@ begin
 			gam_Player [Player],
 			gam_Actor [ActorId],
 			gam_Weapon [WeaponId],
-			gam_Room [RoomId]
+			gam_Room [RoomId],
+			gam_Type [Type],
+			gam_Subtype [Subtype],
+			gam_ShowColor [ShowColor]
 		from
 			det_Games
 		where
@@ -937,9 +946,17 @@ create procedure det_p_NextPlayerCards(
 	@color int,
 	@actor int,
 	@weapon int,
-	@room int
+	@room int,
+	@result bit output
 ) as
 begin
+	declare @userName varchar(100);
+	declare @compareUserName varchar(100);
+	declare @accusecolor int;
+	declare @type int;
+	declare @subType int;
+	declare @game int;
+
 	if exists(
 		select 1 from
 		det_GamePlayerCards
@@ -954,55 +971,166 @@ begin
 		)
 	)
 	begin
-		select
-			[Card].*
-		from (
+		declare curCards cursor for
 			select
-				gap_Username [Username],
-				gpc_Type [Type],
-				gpc_Subtype [Subtype],
-				act_Color [Color]
-			from
-				det_GamePlayerCards
-				inner join det_GamePlayers on gpc_GamePlayer = gap_GamePlayer
-				inner join det_Actors on act_Actor = gap_Actor
+				[Card].*
+			from (
+				select
+					gap_Username [Username],
+					gpc_Type [Type],
+					gpc_Subtype [Subtype],
+					act_Color [Color]
+				from
+					det_GamePlayerCards
+					inner join det_GamePlayers on gpc_GamePlayer = gap_GamePlayer
+					inner join det_Actors on act_Actor = gap_Actor
+				where
+					act_Color > @color and
+					(
+						(gpc_Subtype = @actor and gpc_type = 1) or
+						(gpc_Subtype = @weapon and gpc_type = 2) or
+						(gpc_Subtype = @room and gpc_type = 3)
+					)
+			) [Card]
+			order by
+				[Color];
+		open curCards
+		fetch next from curCards into
+			@userName,
+			@type,
+			@subType,
+			@accusecolor;
+		set @compareUserName = @userName;
+		select
+			@game = gap_Game
+		from
+			det_GamePlayers
+		where
+			gap_Username = @userName;
+		
+		if @game is not null
+		begin
+			update det_Games set
+				gam_ShowColor = @color
 			where
-				act_Color > @color and
-				(
-					(gpc_Subtype = @actor and gpc_type = 1) or
-					(gpc_Subtype = @weapon and gpc_type = 2) or
-					(gpc_Subtype = @room and gpc_type = 3)
-				)
-		) [Card]
-		order by
-			[Color]
-		for xml auto, elements, root('Cards');
+				gam_Game = @game;
+			set @result = 1;
+		end
+		else
+			set @result = 0;
+		while @@fetch_status = 0 and @compareUserName = @userName
+		begin
+			if @type = 1
+				update det_GamePlayers set gap_AccuseActor = @subType where gap_Username = @userName;
+			if @type = 2
+				update det_GamePlayers set gap_AccuseWeapon = @subType where gap_Username = @userName;
+			if @type = 3
+				update det_GamePlayers set gap_AccuseRoom = @subType where gap_Username = @userName;
+				
+			fetch next from curCards into
+				@userName,
+				@type,
+				@subType,
+				@accusecolor;
+		end
+		close curCards
+		deallocate curCards
 	end	
 	else
 	begin
-		select
-			[Card].*
-		from (
+		declare curCards cursor for
 			select
-				gap_Username [Username],
-				gpc_Type [Type],
-				gpc_Subtype [Subtype],
-				act_Color [Color]
-			from
-				det_GamePlayerCards
-				inner join det_GamePlayers on gpc_GamePlayer = gap_GamePlayer
-				inner join det_Actors on act_Actor = gap_Actor
+				[Card].*
+			from (
+				select
+					gap_Username [Username],
+					gpc_Type [Type],
+					gpc_Subtype [Subtype],
+					act_Color [Color]
+				from
+					det_GamePlayerCards
+					inner join det_GamePlayers on gpc_GamePlayer = gap_GamePlayer
+					inner join det_Actors on act_Actor = gap_Actor
+				where
+					act_Color <> @color and
+					(
+						(gpc_Subtype = @actor and gpc_type = 1) or
+						(gpc_Subtype = @weapon and gpc_type = 2) or
+						(gpc_Subtype = @room and gpc_type = 3)
+					)
+			) [Card]
+			order by
+				[Color];
+		open curCards;
+		fetch next from curCards into
+			@userName,
+			@type,
+			@subType,
+			@accusecolor;
+		set @compareUserName = @userName;
+		select
+			@game = gap_Game
+		from
+			det_GamePlayers
+		where
+			gap_Username = @userName;
+		
+		if @game is not null
+		begin
+			update det_Games set
+				gam_ShowColor = @color
 			where
-				act_Color <> @color and
-				(
-					(gpc_Subtype = @actor and gpc_type = 1) or
-					(gpc_Subtype = @weapon and gpc_type = 2) or
-					(gpc_Subtype = @room and gpc_type = 3)
-				)
-		) [Card]
-		order by
-			[Color]
-		for xml auto, elements, root('Cards');	
+				gam_Game = @game;
+			set @result = 1;
+		end
+		else
+			set @result = 0;
+			
+		while @@fetch_status = 0 and @compareUserName = @userName
+		begin
+			if @type = 1
+				update det_GamePlayers set gap_AccuseActor = @subType where gap_Username = @userName;
+			if @type = 2
+				update det_GamePlayers set gap_AccuseWeapon = @subType where gap_Username = @userName;
+			if @type = 3
+				update det_GamePlayers set gap_AccuseRoom = @subType where gap_Username = @userName;
+				
+			fetch next from curCards into
+				@userName,
+				@type,
+				@subType,
+				@accusecolor;
+		end
+		close curCards
+		deallocate curCards
 	end
+end;
+go
+
+declare @o varchar(100); set @o = 'det_p_SetShowCard';
+if object_id(@o, 'P') is not null begin
+	declare @d nvarchar(250); set @d = 'drop procedure ' + @o;
+	execute sp_executesql @d;
+end;
+go
+create procedure det_p_SetShowCard(
+	@game int,
+	@type int,
+	@card int
+) as
+begin
+	update det_Games set
+		gam_Type = @type,
+		gam_Subtype = @card
+	where
+		gam_Game = @game;
+		
+	update det_GamePlayers set
+		gap_AccuseActor = null,
+		gap_AccuseWeapon = null,
+		gap_AccuseRoom = null,
+		gap_Status = 2
+	where
+		gap_Game = @game;
 end;
 go
