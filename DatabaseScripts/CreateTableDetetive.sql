@@ -81,6 +81,9 @@ create table det_Games (
 	gam_Actor int,
 	gam_Weapon int,
 	gam_Room int,
+	gam_ShowColor int,
+	gam_Type int,
+	gam_Subtype int,
 	constraint gam_game primary key(gam_Game),
 	constraint gam_actor foreign key(gam_Actor) references det_Actors(act_Actor),
 	constraint gam_weapon foreign key(gam_Weapon) references det_Weapons(wea_Weapon),
@@ -95,9 +98,15 @@ create table det_GamePlayers (
 	gap_Enabled bit not null,
 	gap_Position varchar(10),
 	gap_Status int not null,
+	gap_AccuseActor int,
+	gap_AccuseWeapon int,
+	gap_AccuseRoom int,
 	constraint gap_gameplayer primary key(gap_GamePlayer),
 	constraint gap_game foreign key(gap_Game) references det_Games(gam_Game),
 	constraint gap_actor foreign key(gap_Actor) references det_Actors(act_Actor),
+	constraint gap_accuseactor foreign key(gap_AccuseActor) references det_Actors(act_Actor),
+	constraint gap_accuseweapon foreign key(gap_AccuseWeapon) references det_Weapons(wea_Weapon),
+	constraint gap_accuseroom foreign key(gap_AccuseRoom) references det_Rooms(roo_Room),
 	constraint gap_UsernameUnique unique(gap_Username)
 );
 drop table det_GamePlayerCards;

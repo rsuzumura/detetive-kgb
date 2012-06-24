@@ -259,6 +259,22 @@ div.accusePanel
     text-align: left;
 }
 
+div.showCard
+{
+    padding: 4px 10px 4px 10px;
+    position: fixed;
+    z-index: 999;
+    font-family:Verdana;
+    width: 750px;
+    min-height:460px;
+    background-image: url('../Images/tela_selecao.jpg');
+    background-repeat: no-repeat;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    text-align: center;
+}
+
 div.dicePanel
 {
     padding: 4px 10px 4px 10px;
@@ -266,6 +282,24 @@ div.dicePanel
     z-index: 999;
     font-family:Verdana;
     width: 430px;
+    min-height:160px;
+    color: #00335e;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    -moz-box-shadow: 0px 0px 11px #000000;
+    -webkit-box-shadow: 0px 0px 11px #000000;
+    box-shadow: 0px 0px 11px #000000;
+}
+
+div.loader
+{
+    padding: 4px 10px 4px 10px;
+    position: fixed;
+    z-index: 999;
+    font-family:Verdana;
+    width: 430px;
+    background-color: #FFFFFF;
     min-height:160px;
     color: #00335e;
     -moz-border-radius: 6px;
@@ -328,4 +362,27 @@ div.dicePanel
 .button:hover
 {
 	background-color: #040506;
+}
+
+.showTitle
+{
+	margin-top: 50px;
+	font-size: 16pt;
+	height: 50px;
+	line-height: 50px;
+	font-weight: bold;
+	vertical-align: middle;
+	font-family: Times New Roman;
+}
+
+.divCard
+{
+	width: 400px;
+}
+
+.divLabel
+{
+	width: 50px;
+	line-height: 50px;
+	vertical-align: middle;
 }

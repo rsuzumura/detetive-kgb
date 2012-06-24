@@ -75,6 +75,8 @@
     </asp:ScriptManager>
     <asp:Timer ID="TimerUpdateGame" runat="server" Interval="10000" OnTick="TimerUpdateGame_Tick">
     </asp:Timer>
+    <asp:Timer ID="TimerGetCards" runat="server" Interval="5000" OnTick="TimerGetCards_Tick" Enabled="false">
+    </asp:Timer>
     <div>
         <asp:UpdatePanel ID="UpdatePanelTable" runat="server">
             <ContentTemplate>
@@ -85,11 +87,16 @@
 
                 <asp:HiddenField ID="hdnActor" runat="server" Value="" />
                 <asp:HiddenField ID="hdnWeapon" runat="server" Value="" />
+
+                <asp:HiddenField ID="hdnShowType" runat="server" Value="" />
+                <asp:HiddenField ID="hdnShowId" runat="server" Value="" />
                 <div align="center">
                     <div class="body">
                         <asp:Button ID="btnClicker" runat="server" Text="" Width="0" Height="0" OnClick="btnClicker_Click" />
                         <asp:Button ID="btnAccuse" runat="server" Text="" Width="0" Height="0" OnClick="btnAccuse_Click" />
                         <asp:Button ID="btnMakeAccuse" runat="server" Text="" Width="0" Height="0" OnClick="btnMakeAccuse_Click" />
+                        <asp:Button ID="btnSetTimer" runat="server" Text="" Width="0" Height="0" OnClick="btnSetTimer_Click" />
+                        <asp:Button ID="btnShowCard" runat="server" Text="" Width="0" Height="0" OnClick="btnShowCard_Click" />
                         <div align="center">
                             <div class="top">
                             </div>
