@@ -103,6 +103,8 @@ namespace Detetive.WEB
 
         protected void btnAcusar_Click(object sender, EventArgs e)
         {
+            TimerUpdateGame.Enabled = false;
+            System.Web.UI.ScriptManager.RegisterStartupScript(this, this.GetType(), "finalAccuse", "finalAccuse();" + scriptUpdateTable(), true);
         }
 
         private void FillActors()
@@ -149,6 +151,15 @@ namespace Detetive.WEB
             foreach (GamePlayer gplay in gpc)
                 sb.Append(Detetive.BOL.Tabuleiro.SetPosition(gplay.Color.Value, gplay.Position.Value));
             System.Web.UI.ScriptManager.RegisterStartupScript(this, this.GetType(), "loadCards", sb.ToString(), true);
+        }
+
+        private string scriptUpdateTable()
+        {
+            StringBuilder sb = new StringBuilder();
+            GamePlayerCollection gpc = GamePlayerCollection.List(Convert.ToInt32(Request.QueryString["game"]));
+            foreach (GamePlayer gplay in gpc)
+                sb.Append(Detetive.BOL.Tabuleiro.SetPosition(gplay.Color.Value, gplay.Position.Value));
+            return sb.ToString();
         }
 
         protected void btnClicker_Click(object sender, EventArgs e)
@@ -311,10 +322,10 @@ namespace Detetive.WEB
                             img = ro.ImageName.Value;
                             break;
                     }
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "load", "showImage('" + img + "');", true);
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "load", "showImage('" + img + "');" + scriptUpdateTable(), true);
                 }
                 else
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "load", "showLoad();", true);
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "load", "showLoad();" + scriptUpdateTable(), true);
             }
         }
 
@@ -324,6 +335,7 @@ namespace Detetive.WEB
             int type = Convert.ToInt32(hdnShowType.Value);
             int cardId = Convert.ToInt32(hdnShowId.Value);
             Game.SetShowCard(gameId, type, cardId);
+            UpdateTable();
         }
     }
 }
