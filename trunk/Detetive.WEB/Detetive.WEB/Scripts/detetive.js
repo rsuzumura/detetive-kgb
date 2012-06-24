@@ -439,7 +439,7 @@ function showCard() {
 
 function showImage(imageName) {
     var divBackGround = "<div class=\"backAccuse\"></div>";
-    $("body").append(divBackGround + "<div class=\"divCard\">" + "<div class=\"divLabel\">" +
+    $("body").append(divBackGround + "<div class=\"divCard\">" + "<div class=\"divLabel\" align=\"center\">" +
                 "Carta mostrada:" +
             "</div>" +
             "<div>" +
@@ -457,4 +457,102 @@ function showImage(imageName) {
     var left = windowWidth / 2 - width / 2;
     $("div.divCard").css({ opacity: 0, top: top - 50, left: left });
     $("div.divCard").animate({ opacity: 1, "top": top, "left": left }, 200);
+}
+
+function finalAccuse() {
+    var divBackGround = "<div class=\"backAccuse\"></div>";
+    $("body").append(divBackGround + "<div class=\"divFinalAccuse\">" + "<div class=\"divFinalAccuseSpace\">" +
+                "&nbsp;" +
+            "</div>" +
+            "<div>" +
+                "<table class=\"finalsuspects\" cellspacing=\"10\">" +
+                    "<tr>" +
+                        "<td><img id=\"suspect_1\" src=\"Images/Cards/person_becky.jpg\" alt=\"\" width=\"70px\" /></td>" +
+                        "<td><img id=\"suspect_2\" src=\"Images/Cards/person_dwight.jpg\" alt=\"\" width=\"70px\" /></td>" +
+                        "<td><img id=\"suspect_3\" src=\"Images/Cards/person_hartigan.jpg\" alt=\"\" width=\"70px\" /></td>" +
+                        "<td><img id=\"suspect_4\" src=\"Images/Cards/person_marv.jpg\" alt=\"\" width=\"70px\" /></td>" +
+                        "<td><img id=\"suspect_5\" src=\"Images/Cards/person_nancy.jpg\" alt=\"\" width=\"70px\" /></td>" +
+                        "<td><img id=\"suspect_6\" src=\"Images/Cards/person_shellie.jpg\" alt=\"\" width=\"70px\" /></td>" +
+                    "</tr>" +
+                    "<tr>" +
+                        "<td><input type=\"radio\" id=\"rdoActor_1\" name=\"susp\" value=\"1\" /></td>" +
+                        "<td><input type=\"radio\" id=\"rdoActor_2\" name=\"susp\" value=\"2\" /></td>" +
+                        "<td><input type=\"radio\" id=\"rdoActor_3\" name=\"susp\" value=\"3\" /></td>" +
+                        "<td><input type=\"radio\" id=\"rdoActor_4\" name=\"susp\" value=\"4\" /></td>" +
+                        "<td><input type=\"radio\" id=\"rdoActor_5\" name=\"susp\" value=\"5\" /></td>" +
+                        "<td><input type=\"radio\" id=\"rdoActor_6\" name=\"susp\" value=\"7\" /></td>" +
+                    "</tr>" +
+                "</table>" +
+            "</div>" +
+            "<div class=\"finalspaceWeapons\">&nbsp;</div>" +
+            "<div>" +
+                "<table class=\"finalsuspects\" cellspacing=\"10\">" +
+                    "<tr>" +
+                        "<td><img id=\"weapon_1\" src=\"Images/Cards/arma_castical.jpg\" alt=\"\" width=\"70px\" /></td>" +
+                        "<td><img id=\"weapon_2\" src=\"Images/Cards/arma_chave inglesa.jpg\" alt=\"\" width=\"70px\" /></td>" +
+                        "<td><img id=\"weapon_3\" src=\"Images/Cards/arma_corda.jpg\"  alt=\"\" width=\"70px\" /></td>" +
+                        "<td><img id=\"weapon_4\" src=\"Images/Cards/arma_faca.jpg\" alt=\"\" width=\"70px\" /></td>" +
+                        "<td><img id=\"weapon_5\" src=\"Images/Cards/arma_martelo.jpg\"  alt=\"\" width=\"70px\" /></td>" +
+                        "<td><img id=\"weapon_6\" src=\"Images/Cards/arma_revolver.jpg\"  alt=\"\" width=\"70px\" /></td>" +
+                    "</tr>" +
+                    "<tr>" +
+                        "<td><input type=\"radio\" id=\"rdoWeapon_1\" name=\"weap\" value=\"10\" /></td>" +
+                        "<td><input type=\"radio\" id=\"rdoWeapon_2\" name=\"weap\" value=\"11\" /></td>" +
+                        "<td><input type=\"radio\" id=\"rdoWeapon_3\" name=\"weap\" value=\"12\" /></td>" +
+                        "<td><input type=\"radio\" id=\"rdoWeapon_4\" name=\"weap\" value=\"13\" /></td>" +
+                        "<td><input type=\"radio\" id=\"rdoWeapon_5\" name=\"weap\" value=\"14\" /></td>" +
+                        "<td><input type=\"radio\" id=\"rdoWeapon_6\" name=\"weap\" value=\"17\" /></td>" +
+                    "</tr>" +
+                "</table>" +
+            "</div>" +
+            "<div class=\"finalspaceWeapons\">&nbsp;</div>" +
+            "<div>" +
+                "<table class=\"finalsuspects\" cellspacing=\"10\">" +
+                    "<tr>" +
+                        "<td><img id=\"room_1\" src=\"Images/Cards/local_cozinha.jpg\" alt=\"\" width=\"70px\" /></td>" +
+                        "<td><img id=\"room_2\" src=\"Images/Cards/local_hall.jpg\"  alt=\"\" width=\"70px\" /></td>" +
+                        "<td><img id=\"room_3\" src=\"Images/Cards/local_sala de jogos.jpg\"  alt=\"\" width=\"70px\" /></td>" +
+                        "<td><img id=\"room_4\" src=\"Images/Cards/local_quarto.jpg\"  alt=\"\" width=\"70px\" /></td>" +
+                        "<td><img id=\"room_5\" src=\"Images/Cards/local_sala de estar.jpg\"  alt=\"\" width=\"70px\" /></td>" +
+                        "<td><img id=\"room_6\" src=\"Images/Cards/local_sala de estudo.jpg\" alt=\"\" width=\"70px\" /></td>" +
+                    "</tr>" +
+                    "<tr>" +
+                        "<td><input type=\"radio\" id=\"rdoRoom_1\" name=\"room\" value=\"1\" /></td>" +
+                        "<td><input type=\"radio\" id=\"rdoRoom_2\" name=\"room\" value=\"2\" /></td>" +
+                        "<td><input type=\"radio\" id=\"rdoRoom_3\" name=\"room\" value=\"3\" /></td>" +
+                        "<td><input type=\"radio\" id=\"rdoRoom_4\" name=\"room\" value=\"4\" /></td>" +
+                        "<td><input type=\"radio\" id=\"rdoRoom_5\" name=\"room\" value=\"5\" /></td>" +
+                        "<td><input type=\"radio\" id=\"rdoRoom_6\" name=\"room\" value=\"6\" /></td>" +
+                    "</tr>" +
+                    "<tr>" +
+                        "<td><img id=\"room_7\" src=\"Images/Cards/local_banheiro.jpg\" alt=\"\" width=\"70px\" /></td>" +
+                        "<td><img id=\"room_8\" src=\"Images/Cards/local_quarto hospede.jpg\" alt=\"\" width=\"70px\" /></td>" +
+                        "<td><img id=\"room_9\" src=\"Images/Cards/local_sala de jantar.jpg\" alt=\"\" width=\"70px\" /></td>" +                        
+                        "<td></td>" +
+                        "<td></td>" +
+                        "<td></td>" +
+                    "</tr>" +
+                    "<tr>" +
+                        "<td><input type=\"radio\" id=\"rdoRoom_7\" name=\"room\" value=\"7\" /></td>" +
+                        "<td><input type=\"radio\" id=\"rdoRoom_8\" name=\"room\" value=\"8\" /></td>" +
+                        "<td><input type=\"radio\" id=\"rdoRoom_9\" name=\"room\" value=\"9\" /></td>" +
+                        "<td></td>" +
+                        "<td></td>" +
+                        "<td></td>" +
+                    "</tr>" +
+                "</table>" +
+            "</div>" +
+            "<div class=\"spaceButton\">&nbsp;</div>" +
+            "<div align=\"center\">" +
+                "<input type=\"button\" value=\"FAZER ACUSAÇÃO FINAL\" class=\"button\" onclick=\"makeSugestion();\" />" +
+            "</div>" + "</div>");
+    $("div.backAccuse").css({ opacity: 0.3 });
+    var width = $("div.divFinalAccuse").width();
+    var height = $("div.divFinalAccuse").height();
+    var windowHeight = $(window).height();
+    var windowWidth = $(window).width();
+    var top = windowHeight / 2 - height / 2;
+    var left = windowWidth / 2 - width / 2;
+    $("div.divFinalAccuse").css({ opacity: 0, top: top - 50, left: left });
+    $("div.divFinalAccuse").animate({ opacity: 1, "top": top, "left": left }, 200);
 }

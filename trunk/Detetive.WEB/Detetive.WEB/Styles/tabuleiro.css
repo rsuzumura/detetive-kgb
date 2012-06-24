@@ -378,11 +378,62 @@ div.loader
 .divCard
 {
 	width: 400px;
+	height: 650px;
+	padding: 4px 10px 4px 10px;
+    position: fixed;
+    z-index: 999;
+    font-family:Verdana;
+    min-height:160px;
+    color: #00335e;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    -moz-box-shadow: 0px 0px 11px #000000;
+    -webkit-box-shadow: 0px 0px 11px #000000;
+    box-shadow: 0px 0px 11px #000000;
 }
 
 .divLabel
 {
-	width: 50px;
+	height: 50px;
 	line-height: 50px;
 	vertical-align: middle;
+}
+
+.divFinalAccuse
+{
+	width: 544px;
+	min-height: 722px;
+	padding: 4px 10px 4px 10px;
+    position: fixed;
+    z-index: 999;
+    font-family:Verdana;
+    color: #00335e;
+    background-image: url('../Images/tela_acusacao_limpo_01.jpg');
+    background-repeat: no-repeat;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    -moz-box-shadow: 0px 0px 11px #000000;
+    -webkit-box-shadow: 0px 0px 11px #000000;
+    box-shadow: 0px 0px 11px #000000;
+}
+.divFinalAccuseSpace
+{
+	height: 40px;
+}
+
+.finalsuspects
+{
+	margin-left: 15px;
+}
+
+.finalsuspects tr td
+{
+	text-align: center;
+}
+
+.finalspaceWeapons
+{
+	height: 50px;
 }

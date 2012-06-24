@@ -91,6 +91,7 @@
     <Content Include="Images\tabuleiro.jpg" />
     <Content Include="Images\tela01.jpg" />
     <Content Include="Images\tela04.jpg" />
+    <Content Include="Images\tela_acusacao_limpo_01.jpg" />
     <Content Include="Images\tela_selecao.jpg" />
     <Content Include="Images\top_secret_min.gif" />
     <Content Include="Rooms.aspx" />
