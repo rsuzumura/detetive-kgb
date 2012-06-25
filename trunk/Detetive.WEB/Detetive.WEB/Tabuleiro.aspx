@@ -22,10 +22,17 @@
             } else {
                 if (detetive.MAP[row][col] == 81 || detetive.MAP[row][col] == 82 || detetive.MAP[row][col] == 83 || detetive.MAP[row][col] == 84 || detetive.MAP[row][col] == 85 ||
                         detetive.MAP[row][col] == 86 || detetive.MAP[row][col] == 87 || detetive.MAP[row][col] == 88 || detetive.MAP[row][col] == 89) {
-                    $("#<%=hdnData.ClientID%>").val(obj.id);
-                    $("#<%=hdnRoom.ClientID%>").val(detetive.MAP[row][col]);
-                    var buttonAccuse = document.getElementById('<%=btnAccuse.ClientID%>');
-                    buttonAccuse.click();
+                    showEnterRoom();
+                    setTimeout(function () {
+                        $("#roomImage").attr('src', '');
+                        $("div.enterRoom,div.background").remove();
+                    }, 5000);
+                    setTimeout(function () {
+                        $("#<%=hdnData.ClientID%>").val(obj.id);
+                        $("#<%=hdnRoom.ClientID%>").val(detetive.MAP[row][col]);
+                        var buttonAccuse = document.getElementById('<%=btnAccuse.ClientID%>');
+                        buttonAccuse.click();
+                    }, 5000);
                 }
             }
         }
@@ -66,6 +73,21 @@
                 msg += weapon > 0 ? "" : "- Escolha uma arma.\n";
                 alert(msg);
             }
+        }
+
+        function showEnterRoom() {
+            var divBackGround = "<div class=\"background\"></div>";
+            $("body").append(divBackGround + "<div class=\"enterRoom\">" + "<img id=\"roomImage\" src=\"\" alt=\"\" />" + "</div>");
+            $("#roomImage").attr('src', 'Images/porta_comodo.gif');
+            $("div.background").css({ opacity: 0.3 });
+            var width = $("div.enterRoom").width();
+            var height = $("div.enterRoom").height();
+            var windowHeight = $(window).height();
+            var windowWidth = $(window).width();
+            var top = windowHeight / 2 - height / 2;
+            var left = windowWidth / 2 - width / 2;
+            $("div.enterRoom").css({ opacity: 0, top: top - 50, left: left });
+            $("div.enterRoom").animate({ opacity: 1, "top": top, "left": left }, 200);
         }
     </script>
 </head>

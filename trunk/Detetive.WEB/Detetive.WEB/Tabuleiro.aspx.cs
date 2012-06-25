@@ -40,7 +40,7 @@ namespace Detetive.WEB
                         }
                     }
                     Game.SetPlayer(gameId, first);
-                    btnDice.Enabled = Current.Color == first;
+                    btnDice.Enabled = btnAcusar.Enabled = Current.Color == first;
                     if (gp.Status.Value == 0)
                     {
                         sb.Append("loadCards();");
@@ -64,7 +64,7 @@ namespace Detetive.WEB
                         }
                     }
                     Game.SetPlayer(gameId, first);
-                    btnDice.Enabled = Current.Color == first;
+                    btnDice.Enabled = btnAcusar.Enabled = Current.Color == first;
                     System.Web.UI.ScriptManager.RegisterStartupScript(this, this.GetType(), "loadCards", sb.ToString(), true);
                 }
                 hdnPlayer1.Value = Current.Color.ToString();
@@ -92,7 +92,7 @@ namespace Detetive.WEB
             //dice = 20;//@TODO remover
             sb.AppendFormat("randomDice({0}, {1}, {2});", dice, position[0], position[1]);
             System.Web.UI.ScriptManager.RegisterStartupScript(this, this.GetType(), "loadCards", sb.ToString(), true);
-            btnDice.Enabled = false;
+            btnDice.Enabled= btnAcusar.Enabled = false;
             TimerUpdateGame.Enabled = false;
             setCards();
         }
@@ -249,7 +249,7 @@ namespace Detetive.WEB
             }
             else
             {
-                
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "load", scriptUpdateTable() + "; notFound();", true);
             }
             
         }
@@ -257,6 +257,7 @@ namespace Detetive.WEB
         protected void btnSetTimer_Click(object sender, EventArgs e)
         {
             TimerUpdateGame.Enabled = true;
+            UpdateTable();
         }
 
         private void setCards()
@@ -321,7 +322,7 @@ namespace Detetive.WEB
                 }
                 else
                 {
-                    btnDice.Enabled = gam.Player.Value == Current.Color;
+                    btnDice.Enabled = btnAcusar.Enabled = gam.Player.Value == Current.Color;
                     UpdateTable();
                 }
                 setCards();
@@ -413,9 +414,12 @@ namespace Detetive.WEB
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "winner", string.Format("showVictoryPanel('{0}', '{1}', '{2}','{3}');", actor.ImageName.Value, weapon.ImageName.Value, room.ImageName.Value, User.Identity.Name), true);
             }
             else
-            {
+            {                
                 GamePlayer.ChangeStatus(gameId, User.Identity.Name, 3);
                 GamePlayer.ResetPosition(gameId, User.Identity.Name, Current.Color);
+                btnAcusar.Enabled = btnDice.Enabled = false;
+                Game.SetPlayerTime(gameId);
+                TimerUpdateGame.Enabled = true;
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "castigo", "falseAccusation();" + scriptUpdateTable(), true);
             }
         }
