@@ -449,3 +449,13 @@ div.loader
     z-index: 999;
     font-family:Verdana;
 }
+
+.enterRoom
+{
+	width: 800px;
+	height: 800px;
+	padding: 4px 10px 4px 10px;
+    position: fixed;
+    z-index: 999;
+    font-family:Verdana;
+}

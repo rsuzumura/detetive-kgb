@@ -91,6 +91,7 @@
     <Content Include="Images\Icons\ico_Marv.png" />
     <Content Include="Images\Icons\ico_Nancy.png" />
     <Content Include="Images\Icons\ico_Shellie.png" />
+    <Content Include="Images\porta_comodo.gif" />
     <Content Include="Images\tabuleiro.jpg" />
     <Content Include="Images\tela01.jpg" />
     <Content Include="Images\tela04.jpg" />

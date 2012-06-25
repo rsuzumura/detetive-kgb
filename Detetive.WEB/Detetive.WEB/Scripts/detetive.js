@@ -27,50 +27,6 @@ detetive.MAP = [
 /*23*/[00, 00, 00, 00, 00, 00, 00, 01, 01, 01, 00, 00, 00, 00, 01, 01, 01, 00, 00, 00, 00, 00, 00, 00],
 /*24*/[00, 00, 00, 00, 00, 00, 00, 00, 00, 91, 00, 00, 00, 00, 96, 00, 00, 00, 00, 00, 00, 00, 00, 00]
         ];
-/*
-function clicker(obj, evt) {
-    var hid = document.getElementById('hdnStatus');
-    var move = document.getElementById('txtMove');
-    var id = obj.id;
-    var pos = id.split('_');
-    var row = pos[0];
-    var col = pos[1];
-    
-    if (detetive.MAP[row][col] == 2) {
-        var player = document.getElementById('hdnPlayer1');
-        var pos = findPosition(player.value);
-        //showAccuse();
-        var changeClass = '';
-        switch (player.value) {
-            case "91":
-                changeClass = 'yellowMove';
-                break;
-            case "92":
-                changeClass = 'purpleMove';
-                break;
-            case "93":
-                changeClass = 'blackMove';
-                break;
-            case "94":
-                changeClass = 'blueMove';
-                break;
-            case "95":
-                changeClass = 'redMove';
-                break;
-            case "96":
-                changeClass = 'grayMove';
-                break;
-        }
-
-        var row_col = pos.split('_');
-        detetive.MAP[parseInt(row_col[0])][parseInt(row_col[1])] = 1;
-        $("#" + pos).removeClass(changeClass);
-        $("#" + obj.id).removeClass('enableArea');
-        $("#" + obj.id).addClass(changeClass);
-        detetive.MAP[row][col] = parseInt(player.value);
-        clearMap();
-    }
-}*/
 
 function clearMap() {
     for (var i = 0; i < 25; i++) {
@@ -724,4 +680,30 @@ function endAnime() {
     var left = windowWidth / 2 - width / 2;
     $("div.endPanel").css({ opacity: 0, top: top - 50, left: left });
     $("div.endPanel").animate({ opacity: 1, "top": top, "left": left }, 200);
+}
+
+function notFound() {
+    var divBackGround = "<div class=\"backAccuse\"></div>";
+    $("body").append(divBackGround + "<div class=\"showCard\">" + "<div class=\"showTitle\">" +
+                "Nenhuma das cartas selecionadas foi localizada." +
+            "</div>" +
+            "<div class=\"spaceButton\">&nbsp;</div>" +
+            "<div align=\"center\">" +
+                "<input type=\"button\" value=\"OK\" class=\"button\" onclick=\"notFoundUpdater();\" />" +
+            "</div>" + "</div>");
+    $("div.backAccuse").css({ opacity: 0.3 });
+    var width = $("div.showCard").width();
+    var height = $("div.showCard").height();
+    var windowHeight = $(window).height();
+    var windowWidth = $(window).width();
+    var top = windowHeight / 2 - height / 2;
+    var left = windowWidth / 2 - width / 2;
+    $("div.showCard").css({ opacity: 0, top: top - 50, left: left });
+    $("div.showCard").animate({ opacity: 1, "top": top, "left": left }, 200);
+}
+
+function notFoundUpdater() {
+    $("div.showCard,div.backAccuse").remove();
+    var btn = document.getElementById('btnSetUpdater');
+    btn.click();
 }
