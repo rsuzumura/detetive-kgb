@@ -15,6 +15,7 @@ namespace Detetive.WEB
         {   
             if (!IsPostBack)
             {
+                timerUpdate.Enabled = false;
                 int gameId = Convert.ToInt32(Request.QueryString["id"]);
                 FillControl<Actor>(ddlActors, ActorCollection.ListUnused(Convert.ToInt32(Request.QueryString["id"])));
                 btnBeginGame.Visible = GamePlayer.DisplayStartButton(Page.User.Identity.Name, gameId);
@@ -76,8 +77,9 @@ namespace Detetive.WEB
                     gp.ActorId = Convert.ToInt32(ddlActors.SelectedValue);
                     gp.Save();
                 }
-                ddlActors.Enabled = false;
-                btnSelect.Text = "TROCAR";
+                timerUpdate.Enabled = true;
+                ddlActors.Enabled   = false;
+                btnSelect.Text      = "TROCAR";
             }
             else
             {
@@ -96,8 +98,16 @@ namespace Detetive.WEB
 
         protected void btnBeginGame_Click(object sender, EventArgs e)
         {
+            btnBeginGame.Enabled = false;
             int gameId = Convert.ToInt32(Request.QueryString["id"]);
             Game.StartGame(gameId);
+            GamePlayerCollection gpc = GamePlayerCollection.List(gameId);
+            string js = string.Empty;
+            foreach (GamePlayer gplay in gpc)
+            {
+                gplay.Position = Detetive.BOL.Tabuleiro.StartPosition(gplay.Color.Value, out js);
+                gplay.Save();
+            }
             StartGame();
             Response.Redirect(string.Format("~/Tabuleiro.aspx?game={0}", gameId), false);
         }

@@ -90,6 +90,10 @@
 
                 <asp:HiddenField ID="hdnShowType" runat="server" Value="" />
                 <asp:HiddenField ID="hdnShowId" runat="server" Value="" />
+
+                <asp:HiddenField ID="hdnFinalActor" runat="server" Value="" />
+                <asp:HiddenField ID="hdnFinalWeapon" runat="server" Value="" />
+                <asp:HiddenField ID="hdnFinalRoom" runat="server" Value="" />
                 <div align="center">
                     <div class="body">
                         <div style="display: none;">
@@ -98,6 +102,9 @@
                             <asp:Button ID="btnMakeAccuse" runat="server" Text="" Width="0" Height="0" OnClick="btnMakeAccuse_Click" />
                             <asp:Button ID="btnSetTimer" runat="server" Text="" Width="0" Height="0" OnClick="btnSetTimer_Click" />
                             <asp:Button ID="btnShowCard" runat="server" Text="" Width="0" Height="0" OnClick="btnShowCard_Click" />
+                            <asp:Button ID="btnConfirmAccuse" runat="server" Text="" Width="0" Height="0" OnClick="btnConfirmAccuse_Click" />
+                            <asp:Button ID="btnSetUpdater" runat="server" Text="" Width="0" Height="0" OnClick="btnSetUpdater_Click" />
+                            <asp:Button ID="btnEndGame" runat="server" Text="" Width="0" Height="0" OnClick="btnEndGame_Click" />
                         </div>
                         <div align="center">
                             <div class="top">

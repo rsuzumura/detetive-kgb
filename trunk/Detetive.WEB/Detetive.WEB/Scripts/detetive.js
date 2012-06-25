@@ -207,11 +207,11 @@ function showAccuse(room) {
                 "<table class=\"suspects\" cellspacing=\"10\">" +
                     "<tr>" +
                         "<td><img id=\"suspect_1\" src=\"Images/Cards/person_becky.jpg\" alt=\"\" width=\"100px\" /></td>" +
-                        "<td><img id=\"suspect_2\" src=\"Images/Cards/person_dwight.jpg\" alt=\"\" width=\"100px\" /></td>" +
-                        "<td><img id=\"suspect_3\" src=\"Images/Cards/person_hartigan.jpg\" alt=\"\" width=\"100px\" /></td>" +
-                        "<td><img id=\"suspect_4\" src=\"Images/Cards/person_marv.jpg\" alt=\"\" width=\"100px\" /></td>" +
-                        "<td><img id=\"suspect_5\" src=\"Images/Cards/person_nancy.jpg\" alt=\"\" width=\"100px\" /></td>" +
-                        "<td><img id=\"suspect_6\" src=\"Images/Cards/person_shellie.jpg\" alt=\"\" width=\"100px\" /></td>" +
+                        "<td><img id=\"suspect_2\" src=\"Images/Cards/person_nancy.jpg\" alt=\"\" width=\"100px\" /></td>" +
+                        "<td><img id=\"suspect_3\" src=\"Images/Cards/person_shellie.jpg\" alt=\"\" width=\"100px\" /></td>" +
+                        "<td><img id=\"suspect_4\" src=\"Images/Cards/person_dwight.jpg\" alt=\"\" width=\"100px\" /></td>" +
+                        "<td><img id=\"suspect_5\" src=\"Images/Cards/person_hartigan.jpg\" alt=\"\" width=\"100px\" /></td>" +
+                        "<td><img id=\"suspect_6\" src=\"Images/Cards/person_marv.jpg\" alt=\"\" width=\"100px\" /></td>" +
                     "</tr>" +
                     "<tr>" +
                         "<td><input type=\"radio\" id=\"rdoActor_1\" name=\"susp\" value=\"1\" /></td>" +
@@ -446,7 +446,7 @@ function showImage(imageName) {
                 "<img src=\"Images/Cards/" + imageName + "\" id=\"imgShow\" alt=\"\" width=\"400px\" style=\"border-style: none;\" />" +
             "<div class=\"spaceButton\">&nbsp;</div>" +
             "<div align=\"center\">" +
-                "<input type=\"button\" value=\"OK\" class=\"button\" onclick=\"showCard();\" />" +
+                "<input type=\"button\" value=\"OK\" class=\"button\" onclick=\"enableUpdater();\" />" +
             "</div>" + "</div>");
     $("div.backAccuse").css({ opacity: 0.3 });
     var width = $("div.divCard").width();
@@ -468,11 +468,11 @@ function finalAccuse() {
                 "<table class=\"finalsuspects\" cellspacing=\"10\">" +
                     "<tr>" +
                         "<td><img id=\"suspect_1\" src=\"Images/Cards/person_becky.jpg\" alt=\"\" width=\"70px\" /></td>" +
-                        "<td><img id=\"suspect_2\" src=\"Images/Cards/person_dwight.jpg\" alt=\"\" width=\"70px\" /></td>" +
-                        "<td><img id=\"suspect_3\" src=\"Images/Cards/person_hartigan.jpg\" alt=\"\" width=\"70px\" /></td>" +
-                        "<td><img id=\"suspect_4\" src=\"Images/Cards/person_marv.jpg\" alt=\"\" width=\"70px\" /></td>" +
-                        "<td><img id=\"suspect_5\" src=\"Images/Cards/person_nancy.jpg\" alt=\"\" width=\"70px\" /></td>" +
-                        "<td><img id=\"suspect_6\" src=\"Images/Cards/person_shellie.jpg\" alt=\"\" width=\"70px\" /></td>" +
+                        "<td><img id=\"suspect_2\" src=\"Images/Cards/person_nancy.jpg\" alt=\"\" width=\"70px\" /></td>" +
+                        "<td><img id=\"suspect_3\" src=\"Images/Cards/person_shellie.jpg\" alt=\"\" width=\"70px\" /></td>" +
+                        "<td><img id=\"suspect_4\" src=\"Images/Cards/person_dwight.jpg\" alt=\"\" width=\"70px\" /></td>" +
+                        "<td><img id=\"suspect_5\" src=\"Images/Cards/person_hartigan.jpg\" alt=\"\" width=\"70px\" /></td>" +
+                        "<td><img id=\"suspect_6\" src=\"Images/Cards/person_marv.jpg\" alt=\"\" width=\"70px\" /></td>" +
                     "</tr>" +
                     "<tr>" +
                         "<td><input type=\"radio\" id=\"rdoActor_1\" name=\"susp\" value=\"1\" /></td>" +
@@ -544,7 +544,8 @@ function finalAccuse() {
             "</div>" +
             "<div class=\"spaceButton\">&nbsp;</div>" +
             "<div align=\"center\">" +
-                "<input type=\"button\" value=\"FAZER ACUSAÇÃO FINAL\" class=\"button\" onclick=\"makeSugestion();\" />" +
+                "<input type=\"button\" value=\"FAZER ACUSAÇÃO FINAL\" class=\"button\" onclick=\"doFinalAccusation();\" />" +
+                "<input type=\"button\" value=\"CANCELAR\" class=\"button\" onclick=\"cancelAccusation();\" />" +
             "</div>" + "</div>");
     $("div.backAccuse").css({ opacity: 0.3 });
     var width = $("div.divFinalAccuse").width();
@@ -555,4 +556,172 @@ function finalAccuse() {
     var left = windowWidth / 2 - width / 2;
     $("div.divFinalAccuse").css({ opacity: 0, top: top - 50, left: left });
     $("div.divFinalAccuse").animate({ opacity: 1, "top": top, "left": left }, 200);
+}
+
+function doFinalAccusation() {
+    var actor = 0;
+    var weapon = 0;
+    var room = 0;
+    var button = document.getElementById('btnConfirmAccuse');
+    var hdnFinalActor  = document.getElementById('hdnFinalActor');
+    var hdnFinalWeapon = document.getElementById('hdnFinalWeapon');
+    var hdnFinalRoom   = document.getElementById('hdnFinalRoom');
+    
+    var rdoActors = document.getElementsByName("susp");
+    for (var i = 0; i < rdoActors.length; i++) {
+        if (rdoActors[i].checked) {
+            actor = parseInt(rdoActors[i].value);
+            break;
+        }
+    }
+
+    var rdoWeapons = document.getElementsByName("weap");
+    for (var i = 0; i < rdoWeapons.length; i++) {
+        if (rdoWeapons[i].checked) {
+            weapon = parseInt(rdoWeapons[i].value);
+            break;
+        }
+    }
+
+    var rdoRooms = document.getElementsByName("room");
+    for (var i = 0; i < rdoRooms.length; i++) {
+        if (rdoRooms[i].checked) {
+            room = parseInt(rdoRooms[i].value);
+            break;
+        }
+    }
+
+    if (actor > 0 && weapon > 0 && room > 0) {
+        hdnFinalActor.value = actor.toString();
+        hdnFinalWeapon.value = weapon.toString();
+        hdnFinalRoom.value = room.toString();
+        //hideAccuse();
+        button.click();
+        $("div.divFinalAccuse,div.backAccuse").remove();
+    } else {
+        var msg = "";
+        msg += actor > 0 ? "" : "- Escolha uma carta.\n";
+        msg += weapon > 0 ? "" : "- Escolha uma arma.\n";
+        msg += room > 0 ? "" : "- Escolha uma cômodo.\n";
+        alert(msg);
+    }
+}
+
+function cancelAccusation() {
+    var btn = document.getElementById('btnSetUpdater');
+    $("div.divFinalAccuse,div.backAccuse").remove();
+    btn.click();
+}
+
+function showVictoryPanel(actor, weapon, room, userName) {
+    endAnime();
+    setTimeout(function () {
+        $("#endImage").attr('src', '');
+        $("div.endPanel,div.background").remove();
+    }, 10000);
+
+    setTimeout(function () {
+        var divBackGround = "<div class=\"backAccuse\"></div>";
+        $("body").append(divBackGround + "<div class=\"showCard\">" + "<div class=\"showTitle\">" +
+                    "Parabéns " + userName + ", você encontrou o resultado!" +
+                "</div>" +
+                "<div>" +
+                    "<table class=\"final\" cellspacing=\"10\">" +
+                        "<tr>" +
+                            "<td align=\"center\"><img id=\"result_1\" src=\"Images/Cards/" + actor + "\" alt=\"\" width=\"150px\" /></td>" +
+                            "<td align=\"center\"><img id=\"result_2\" src=\"Images/Cards/" + weapon + "\" alt=\"\" width=\"150px\" /></td>" +
+                            "<td align=\"center\"><img id=\"result_3\" src=\"Images/Cards/" + room + "\" alt=\"\" width=\"150px\" /></td>" +
+                        "</tr>" +
+                    "</table>" +
+                "</div>" +
+                "<div class=\"spaceButton\">&nbsp;</div>" +
+                "<div align=\"center\">" +
+                    "<input type=\"button\" value=\"SAIR\" class=\"button\" onclick=\"exitGame();\" />" +
+                "</div>" + "</div>");
+        $("div.backAccuse").css({ opacity: 0.3 });
+        var width = $("div.showCard").width();
+        var height = $("div.showCard").height();
+        var windowHeight = $(window).height();
+        var windowWidth = $(window).width();
+        var top = windowHeight / 2 - height / 2;
+        var left = windowWidth / 2 - width / 2;
+        $("div.showCard").css({ opacity: 0, top: top - 50, left: left });
+        $("div.showCard").animate({ opacity: 1, "top": top, "left": left }, 200);
+    }, 10000);
+}
+
+function endGame(userName) {
+    var divBackGround = "<div class=\"backAccuse\"></div>";
+    $("body").append(divBackGround + "<div class=\"showCard\">" + "<div class=\"showTitle\">" +
+                "Jogo finalizado, o jogador " + userName + " venceu." +
+            "</div>" +
+            "<div class=\"spaceButton\">&nbsp;</div>" +
+            "<div align=\"center\">" +
+                "<input type=\"button\" value=\"SAIR\" class=\"button\" onclick=\"exitGame();\" />" +
+            "</div>" + "</div>");
+    $("div.backAccuse").css({ opacity: 0.3 });
+    var width = $("div.showCard").width();
+    var height = $("div.showCard").height();
+    var windowHeight = $(window).height();
+    var windowWidth = $(window).width();
+    var top = windowHeight / 2 - height / 2;
+    var left = windowWidth / 2 - width / 2;
+    $("div.showCard").css({ opacity: 0, top: top - 50, left: left });
+    $("div.showCard").animate({ opacity: 1, "top": top, "left": left }, 200);
+}
+
+function exitGame() {
+    var btn = document.getElementById('btnEndGame');
+    btn.click();
+}
+
+function falseAccusation() {
+    alert('A acusação feita está incorreta, você será punido com a perda de um turno e voltará para a posição inicial do tabuleiro.');
+}
+
+function punish() {
+    alert('Você havia feito uma acusação incorreta, e perdeu esta rodada.');
+}
+
+function showQuestionCard() {
+    var divBackGround = "<div class=\"backAccuse\"></div>";
+    $("body").append(divBackGround + "<div class=\"divCard\">" + "<div class=\"divLabel\" align=\"center\">" +
+                "Carta mostrada:" +
+            "</div>" +
+            "<div>" +
+                "<img src=\"Images/card_interrogacao.jpg\" id=\"imgShow\" alt=\"\" width=\"400px\" style=\"border-style: none;\" />" +
+            "<div class=\"spaceButton\">&nbsp;</div>" +
+            "<div align=\"center\">" +
+                "<input type=\"button\" value=\"OK\" class=\"button\" onclick=\"enableUpdater();\" />" +
+            "</div>" + "</div>");
+    $("div.backAccuse").css({ opacity: 0.3 });
+    var width = $("div.divCard").width();
+    var height = $("div.divCard").height();
+    var windowHeight = $(window).height();
+    var windowWidth = $(window).width();
+    var top = windowHeight / 2 - height / 2;
+    var left = windowWidth / 2 - width / 2;
+    $("div.divCard").css({ opacity: 0, top: top - 50, left: left });
+    $("div.divCard").animate({ opacity: 1, "top": top, "left": left }, 200);
+}
+
+function enableUpdater() {
+    $("div.divCard,div.backAccuse").remove();
+    var btn = document.getElementById('btnSetUpdater');
+    btn.click();
+}
+
+function endAnime() {
+    var divBackGround = "<div class=\"background\"></div>";
+    $("body").append(divBackGround + "<div class=\"endPanel\">" + "<img id=\"endImage\" src=\"\" alt=\"\" />" + "</div>");
+    $("#endImage").attr('src', 'Images/crime_anim_3.gif');
+    $("div.background").css({ opacity: 0.3 });
+    var width = $("div.endPanel").width();
+    var height = $("div.endPanel").height();
+    var windowHeight = $(window).height();
+    var windowWidth = $(window).width();
+    var top = windowHeight / 2 - height / 2;
+    var left = windowWidth / 2 - width / 2;
+    $("div.endPanel").css({ opacity: 0, top: top - 50, left: left });
+    $("div.endPanel").animate({ opacity: 1, "top": top, "left": left }, 200);
 }

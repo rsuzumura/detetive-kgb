@@ -74,7 +74,10 @@
     <Content Include="Images\Cards\person_marv.jpg" />
     <Content Include="Images\Cards\person_nancy.jpg" />
     <Content Include="Images\Cards\person_shellie.jpg" />
+    <Content Include="Images\card_interrogacao.jpg" />
     <Content Include="Images\comodo_acusacao01_limpo.jpg" />
+    <Content Include="Images\crime_anim.gif" />
+    <Content Include="Images\crime_anim_3.gif" />
     <Content Include="Images\dado_1.gif" />
     <Content Include="Images\dado_2.gif" />
     <Content Include="Images\dado_3.gif" />

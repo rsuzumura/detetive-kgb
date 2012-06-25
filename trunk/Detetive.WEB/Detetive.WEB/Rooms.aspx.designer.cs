@@ -58,13 +58,13 @@ namespace Detetive.WEB {
         protected global::System.Web.UI.WebControls.Literal ltStartedGame1;
         
         /// <summary>
-        /// Button2 control.
+        /// btnEnter1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.Button btnEnter1;
         
         /// <summary>
         /// ltPlayers_2 control.
@@ -85,13 +85,13 @@ namespace Detetive.WEB {
         protected global::System.Web.UI.WebControls.Literal ltStartedGame2;
         
         /// <summary>
-        /// Button1 control.
+        /// btnEnter2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button btnEnter2;
         
         /// <summary>
         /// ltPlayers_3 control.

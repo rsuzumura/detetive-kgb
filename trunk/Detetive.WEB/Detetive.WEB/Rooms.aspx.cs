@@ -38,16 +38,19 @@ namespace Detetive.WEB
             GamePlayerCollection gpc1 = GamePlayerCollection.List(1);
             ltPlayers_1.Text    = string.Format("{0}", gpc1 != null ? gpc1.Count : 0);
             ltStartedGame1.Text = !g1.Started.IsNull && g1.Started.Value ? "JOGO INICIADO!" : "JOGO NÃO INICIADO";
+            btnEnter1.Enabled = g1.Started.IsNull || !g1.Started.Value;
 
             Game g2 = Game.Get(2);
             GamePlayerCollection gpc2 = GamePlayerCollection.List(2);
             ltPlayers_2.Text    = string.Format("{0}", gpc2 != null ? gpc2.Count : 0);
             ltStartedGame2.Text = !g2.Started.IsNull && g2.Started.Value ? "JOGO INICIADO!" : "JOGO NÃO INICIADO";
+            btnEnter2.Enabled = g2.Started.IsNull || !g2.Started.Value;
 
             Game g3 = Game.Get(3);
             GamePlayerCollection gpc3 = GamePlayerCollection.List(3);
             ltPlayers_3.Text    = string.Format("{0}", gpc3 != null ? gpc3.Count : 0);
             ltStartedGame3.Text = !g3.Started.IsNull && g3.Started.Value ? "JOGO INICIADO!" : "JOGO NÃO INICIADO";
+            btnEnter3.Enabled = g3.Started.IsNull || !g3.Started.Value;
         }
     }
 }

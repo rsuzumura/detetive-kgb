@@ -27,13 +27,11 @@ namespace Detetive.WEB
                 Current.Color = gp.Color.Value;
                 if (gp.Status.IsNull || gp.Status.Value == 0)
                 {
-
                     GamePlayerCollection gpc = GamePlayerCollection.List(gameId);
                     string currentPos = string.Empty;
                     foreach (GamePlayer gplay in gpc)
                     {
-                        gplay.Position = Detetive.BOL.Tabuleiro.StartPosition(gplay.Color.Value, out js);
-                        gplay.Save();
+                        Detetive.BOL.Tabuleiro.StartPosition(gplay.Color.Value, out js);
                         sb.Append(js);
                         if (gplay.Color.Value < first)
                         {
@@ -47,7 +45,6 @@ namespace Detetive.WEB
                     {
                         sb.Append("loadCards();");
                         gp.Status = 1;
-                        gp.Position = currentPos;
                         gp.Save();
                     }
                     System.Web.UI.ScriptManager.RegisterStartupScript(this, this.GetType(), "loadCards", sb.ToString(), true);
@@ -59,7 +56,6 @@ namespace Detetive.WEB
                     foreach (GamePlayer gplay in gpc)
                     {
                         gplay.Position = Detetive.BOL.Tabuleiro.StartPosition(gplay.Color.Value, out js);
-                        gplay.Save();
                         sb.Append(js);
                         if (gplay.Color.Value < first)
                         {
@@ -93,7 +89,7 @@ namespace Detetive.WEB
             tab.positions[int.Parse(position[0])][int.Parse(position[1])] = Current.Color;
             string val = tab.ToString();
             sb.Append("getMAP('" + val + "');");
-            dice = 20;//@TODO remover
+            //dice = 20;//@TODO remover
             sb.AppendFormat("randomDice({0}, {1}, {2});", dice, position[0], position[1]);
             System.Web.UI.ScriptManager.RegisterStartupScript(this, this.GetType(), "loadCards", sb.ToString(), true);
             btnDice.Enabled = false;
@@ -214,12 +210,41 @@ namespace Detetive.WEB
             btnAcusar.Enabled = false;
             int actorId = Convert.ToInt32(hdnActor.Value);
             int weaponId = Convert.ToInt32(hdnWeapon.Value);
-            int roomId = Convert.ToInt32(hdnRoom.Value);
-
+            int roomId = 0;
+            switch (hdnRoom.Value)
+            {
+                case "81":
+                    roomId = 1;
+                    break;
+                case "82":
+                    roomId = 2;
+                    break;
+                case "83":
+                    roomId = 3;
+                    break;
+                case "84":
+                    roomId = 4;
+                    break;
+                case "85":
+                    roomId = 5;
+                    break;
+                case "86":
+                    roomId = 6;
+                    break;
+                case "87":
+                    roomId = 7;
+                    break;
+                case "88":
+                    roomId = 8;
+                    break;
+                case "89":
+                    roomId = 9;
+                    break;
+            }
             if (GamePlayer.SetShowCards(Current.Color, actorId, weaponId, roomId))
             {
                 TimerUpdateGame.Enabled = false;
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "load", "showLoad();", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "load", scriptUpdateTable() + "; showLoad();", true);
                 TimerGetCards.Enabled = true;
             }
             else
@@ -263,50 +288,82 @@ namespace Detetive.WEB
 
         protected void TimerUpdateGame_Tick(object sender, EventArgs e)
         {
-            GamePlayer player = GamePlayer.Get(Convert.ToInt32(Request.QueryString["game"]), User.Identity.Name);
-            if (!player.AccuseActorId.IsNull || !player.AccuseWeaponId.IsNull || !player.AccuseRoomId.IsNull)
+            int gameId = Convert.ToInt32(Request.QueryString["game"]);
+            GamePlayer player = GamePlayer.Get(gameId, User.Identity.Name);
+            Game gam = Game.Get(gameId);
+
+            if (!player.Status.IsNull && player.Status.Value == 1)
             {
-                string images = string.Empty;
-                string radios = string.Empty;
-                if (!player.AccuseActorId.IsNull)
+                if (!player.AccuseActorId.IsNull || !player.AccuseWeaponId.IsNull || !player.AccuseRoomId.IsNull)
                 {
-                    Actor actor = Actor.Get(player.AccuseActorId.Value);
-                    images += string.Format("<td><img id=\"suspect_1\" src=\"Images/Cards/{0}\" alt=\"\" width=\"100px\" /></td>", actor.ImageName.Value);
-                    radios += string.Format("<td><input type=\"radio\" id=\"rdoActor_1\" name=\"susp\" value=\"{0}\" /></td>", actor.ActorId.Value);
+                    string images = string.Empty;
+                    string radios = string.Empty;
+                    if (!player.AccuseActorId.IsNull)
+                    {
+                        Actor actor = Actor.Get(player.AccuseActorId.Value);
+                        images += string.Format("<td align=\"center\"><img id=\"suspect_1\" src=\"Images/Cards/{0}\" alt=\"\" width=\"100px\" /></td>", actor.ImageName.Value);
+                        radios += string.Format("<td align=\"center\"><input type=\"radio\" id=\"rdoActor_1\" name=\"susp\" value=\"{0}\" /></td>", actor.ActorId.Value);
+                    }
+                    if (!player.AccuseWeaponId.IsNull)
+                    {
+                        Weapon weapon = Weapon.Get(player.AccuseWeaponId.Value);
+                        images += string.Format("<td align=\"center\"><img id=\"weapon_1\" src=\"Images/Cards/{0}\" alt=\"\" width=\"100px\" /></td>", weapon.ImageName.Value);
+                        radios += string.Format("<td align=\"center\"><input type=\"radio\" id=\"rdoWeapon_1\" name=\"susp\" value=\"{0}\" /></td>", weapon.WeaponId.Value);
+                    }
+                    if (!player.AccuseRoomId.IsNull)
+                    {
+                        Room room = Room.Get(player.AccuseRoomId.Value);
+                        images += string.Format("<td align=\"center\"><img id=\"room_1\" src=\"Images/Cards/{0}\" alt=\"\" width=\"100px\" /></td>", room.ImageName.Value);
+                        radios += string.Format("<td align=\"center\"><input type=\"radio\" id=\"rdoRoom_1\" name=\"susp\" value=\"{0}\" /></td>", room.RoomId.Value);
+                    }
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "showCard", string.Format("showCards('{0}', '{1}');", images, radios), true);
+                    TimerUpdateGame.Enabled = false;
                 }
-                if (!player.AccuseWeaponId.IsNull)
+                else
                 {
-                    Weapon weapon = Weapon.Get(player.AccuseWeaponId.Value);
-                    images += string.Format("<td><img id=\"weapon_1\" src=\"Images/Cards/{0}\" alt=\"\" width=\"100px\" /></td>", weapon.ImageName.Value);
-                    radios += string.Format("<td><input type=\"radio\" id=\"rdoWeapon_1\" name=\"susp\" value=\"{0}\" /></td>", weapon.WeaponId.Value);
+                    btnDice.Enabled = gam.Player.Value == Current.Color;
+                    UpdateTable();
                 }
-                if (!player.AccuseRoomId.IsNull)
-                {
-                    Room room = Room.Get(player.AccuseRoomId.Value);
-                    images += string.Format("<td><img id=\"room_1\" src=\"Images/Cards/{0}\" alt=\"\" width=\"100px\" /></td>", room.ImageName.Value);
-                    radios += string.Format("<td><input type=\"radio\" id=\"rdoRoom_1\" name=\"susp\" value=\"{0}\" /></td>", room.RoomId.Value);
-                }
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "showCard", string.Format("showCards('{0}', '{1}');", images, radios), true);
+                setCards();
+            }
+            else if (player.Status.Value == 2)
+            {
+                player.Status = 1;
+                player.Save();
                 TimerUpdateGame.Enabled = false;
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "showCard", "showQuestionCard();", true);
             }
-            else
+            else if (player.Status.Value == 3)
             {
-                Game gam = Game.Get(Convert.ToInt32(Request.QueryString["game"]));
-                btnDice.Enabled = gam.Player.Value == Current.Color;
-                UpdateTable();
+                if (gam.Player.Value == Current.Color)
+                {
+                    btnDice.Enabled = false;
+                    player.Status = 1;
+                    player.Save();
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "punish", scriptUpdateTable() + "punish();", true);
+                    Game.SetPlayerTime(gameId);
+                }
+                else
+                    UpdateTable();
             }
-            setCards();
+            else if (player.Status.Value == 4)
+            {
+                GamePlayer gp = GamePlayer.Get(gameId, User.Identity.Name);
+                TimerUpdateGame.Enabled = false;
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "end", "endGame('" + gp.Winner.Value + "');", true);
+            }
         }
 
         protected void TimerGetCards_Tick(object sender, EventArgs e)
         {
-            Game game = Game.Get(Convert.ToInt32(Request.QueryString["game"]));
+            int gameId = Convert.ToInt32(Request.QueryString["game"]);
+            Game game = Game.Get(gameId);
             if (game.ShowColor.Value == Current.Color)
             {
-                TimerGetCards.Enabled = false;
                 string img = string.Empty;
                 if (!game.Type.IsNull)
                 {
+                    TimerGetCards.Enabled = false;
                     switch (game.Type.Value)
                     {
                         case 1:
@@ -322,6 +379,7 @@ namespace Detetive.WEB
                             img = ro.ImageName.Value;
                             break;
                     }
+                    Game.ClearShow(gameId);
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "load", "showImage('" + img + "');" + scriptUpdateTable(), true);
                 }
                 else
@@ -335,6 +393,43 @@ namespace Detetive.WEB
             int type = Convert.ToInt32(hdnShowType.Value);
             int cardId = Convert.ToInt32(hdnShowId.Value);
             Game.SetShowCard(gameId, type, cardId);
+            GamePlayer.ChangeStatus(gameId, User.Identity.Name, 1);
+            UpdateTable();
+        }
+
+        protected void btnConfirmAccuse_Click(object sender, EventArgs e)
+        {
+            int gameId   = Convert.ToInt32(Request.QueryString["game"]);
+            int actorId  = Convert.ToInt32(hdnFinalActor.Value);
+            int weaponId = Convert.ToInt32(hdnFinalWeapon.Value);
+            int roomId   = Convert.ToInt32(hdnFinalRoom.Value);
+
+            if (GamePlayer.TryAccusation(gameId, Current.Color, actorId, weaponId, roomId))
+            {
+                GamePlayer.SetWinner(gameId, User.Identity.Name);
+                Actor actor = Actor.Get(actorId);
+                Weapon weapon = Weapon.Get(weaponId);
+                Room room = Room.Get(roomId);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "winner", string.Format("showVictoryPanel('{0}', '{1}', '{2}','{3}');", actor.ImageName.Value, weapon.ImageName.Value, room.ImageName.Value, User.Identity.Name), true);
+            }
+            else
+            {
+                GamePlayer.ChangeStatus(gameId, User.Identity.Name, 3);
+                GamePlayer.ResetPosition(gameId, User.Identity.Name, Current.Color);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "castigo", "falseAccusation();" + scriptUpdateTable(), true);
+            }
+        }
+
+        protected void btnEndGame_Click(object sender, EventArgs e)
+        {
+            int gameId = Convert.ToInt32(Request.QueryString["game"]);
+            Game.Clear(gameId);
+            Response.Redirect("~/Rooms.aspx", false);
+        }
+
+        protected void btnSetUpdater_Click(object sender, EventArgs e)
+        {
+            TimerUpdateGame.Enabled = true;
             UpdateTable();
         }
     }
