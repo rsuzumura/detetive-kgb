@@ -45,5 +45,15 @@ namespace Detetive.BOL
         {
             SqlXmlRun.Execute("det_p_SetShowCard", new SqlXmlParams("game", gameId, "type", type, "card", cardId));
         }
+
+        public static void Clear(int gameId)
+        {
+            SqlXmlRun.Execute("det_p_ClearGame", new SqlXmlParams("game", gameId));
+        }
+
+        public static void ClearShow(int gameId)
+        {
+            SqlXmlRun.Execute("det_p_ClearShow", new SqlXmlParams("game", gameId));
+        }
     }
 }

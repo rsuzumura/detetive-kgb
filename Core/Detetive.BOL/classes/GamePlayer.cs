@@ -20,6 +20,7 @@ namespace Detetive.BOL
         public SqlInt32 AccuseActorId { get; set; }
         public SqlInt32 AccuseWeaponId { get; set; }
         public SqlInt32 AccuseRoomId { get; set; }
+        public SqlString Winner { get; set; }
 
         public void Add()
         {
@@ -67,6 +68,28 @@ namespace Detetive.BOL
             bool r;
             SqlXmlRun.Execute("det_p_NextPlayerCards", out r, new SqlXmlParams("color", color, "actor", actorId, "weapon", weaponId, "room", roomId));
             return r;
+        }
+
+        public static bool TryAccusation(int game, int color, int actorId, int weaponId, int roomId)
+        {
+            bool r;
+            SqlXmlRun.Execute("det_p_TryAccusation", out r, new SqlXmlParams("game", game, "color", color, "actor", actorId, "weapon", weaponId, "room", roomId));
+            return r;
+        }
+
+        public static void ChangeStatus(int game, string userName, int status)
+        {
+            SqlXmlRun.Execute("det_p_ChangePlayerStatus", new SqlXmlParams("game", game, "userName", userName, "status", status));
+        }
+
+        public static void ResetPosition(int game, string userName, int color)
+        {
+            SqlXmlRun.Execute("det_p_ResetPosition", new SqlXmlParams("game", game, "userName", userName, "color", color));
+        }
+
+        public static void SetWinner(int game, string userName)
+        {
+            SqlXmlRun.Execute("det_p_SetWinner", new SqlXmlParams("game", game, "userName", userName));
         }
     }
 

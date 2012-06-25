@@ -130,6 +130,33 @@ namespace Detetive.WEB {
         protected global::System.Web.UI.WebControls.HiddenField hdnShowId;
         
         /// <summary>
+        /// hdnFinalActor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdnFinalActor;
+        
+        /// <summary>
+        /// hdnFinalWeapon control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdnFinalWeapon;
+        
+        /// <summary>
+        /// hdnFinalRoom control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdnFinalRoom;
+        
+        /// <summary>
         /// btnClicker control.
         /// </summary>
         /// <remarks>
@@ -173,6 +200,33 @@ namespace Detetive.WEB {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnShowCard;
+        
+        /// <summary>
+        /// btnConfirmAccuse control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnConfirmAccuse;
+        
+        /// <summary>
+        /// btnSetUpdater control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSetUpdater;
+        
+        /// <summary>
+        /// btnEndGame control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEndGame;
         
         /// <summary>
         /// t0_0 control.

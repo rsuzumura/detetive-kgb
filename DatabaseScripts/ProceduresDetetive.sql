@@ -1119,6 +1119,17 @@ create procedure det_p_SetShowCard(
 	@card int
 ) as
 begin
+	declare @userName varchar(100);
+	
+	select
+		@userName = gap_Username
+	from
+		det_Games
+		inner join det_Actors on act_Color = gam_ShowColor
+		inner join det_GamePlayers on gap_Actor = act_Actor
+	where
+		gap_Game = @game;
+		
 	update det_Games set
 		gam_Type = @type,
 		gam_Subtype = @card
@@ -1130,6 +1141,186 @@ begin
 		gap_AccuseWeapon = null,
 		gap_AccuseRoom = null,
 		gap_Status = 2
+	where
+		gap_Game = @game and
+		gap_Username <> @userName;
+end;
+go
+
+declare @o varchar(100); set @o = 'det_p_TryAccusation';
+if object_id(@o, 'P') is not null begin
+	declare @d nvarchar(250); set @d = 'drop procedure ' + @o;
+	execute sp_executesql @d;
+end;
+go
+create procedure det_p_TryAccusation(
+	@game int,
+	@color int,
+	@actor int,
+	@weapon int,
+	@room int,
+	@result bit output
+) as
+begin
+	if exists (select 1 from det_Games where gam_Actor = @actor and gam_Weapon = @weapon and gam_Room = @room and gam_Game = @game)
+	begin
+		set @result = 1;
+		update det_GamePlayers set
+			gap_Status = 4
+		where
+			gap_Game = @game;
+	end
+	else
+	begin
+		set @result = 0;
+		update det_GamePlayers set
+			gap_Status = 3
+		from
+			det_GamePlayers
+			inner join det_Actors on gap_Actor = act_Actor
+		where
+			gap_Game = @game and
+			act_Color = @color;
+	end
+end;
+go
+
+declare @o varchar(100); set @o = 'det_p_ChangePlayerStatus';
+if object_id(@o, 'P') is not null begin
+	declare @d nvarchar(250); set @d = 'drop procedure ' + @o;
+	execute sp_executesql @d;
+end;
+go
+create procedure det_p_ChangePlayerStatus(
+	@game int,
+	@userName varchar(100),
+	@status int
+) as
+begin
+	update det_GamePlayers set
+		gap_Status = 3
+	where
+		gap_Game = @game and
+		gap_Username = @userName;
+end;
+go
+
+declare @o varchar(100); set @o = 'det_p_ResetPosition';
+if object_id(@o, 'P') is not null begin
+	declare @d nvarchar(250); set @d = 'drop procedure ' + @o;
+	execute sp_executesql @d;
+end;
+go
+create procedure det_p_ResetPosition(
+	@game int,
+	@userName varchar(100),
+	@color int
+) as
+begin
+	declare @position varchar(10);
+	set @position = case @color
+		when 91 then '24_9'
+		when 92 then '18_0'
+		when 93 then '5_0'
+		when 94 then '0_16'
+		when 95 then '7_23'
+		when 96 then '24_14'
+	end;		
+	
+	update det_GamePlayers set
+		gap_Position = @position
+	where
+		gap_Game = @game and
+		gap_Username = @userName;
+end;
+go
+
+declare @o varchar(100); set @o = 'det_p_SetPlayer';
+if object_id(@o, 'P') is not null begin
+	declare @d nvarchar(250); set @d = 'drop procedure ' + @o;
+	execute sp_executesql @d;
+end;
+go
+create procedure det_p_SetPlayer(
+	@game int,
+	@color int
+) as
+begin
+	update det_Games set
+		gam_Player = @color
+	where
+		gam_Game = @game;
+end;
+go
+
+declare @o varchar(100); set @o = 'det_p_ClearGame';
+if object_id(@o, 'P') is not null begin
+	declare @d nvarchar(250); set @d = 'drop procedure ' + @o;
+	execute sp_executesql @d;
+end;
+go
+create procedure det_p_ClearGame(
+	@game int
+) as
+begin
+	delete det_GamePlayerCards 
+	from
+		det_GamePlayerCards
+		inner join det_GamePlayers on gpc_GamePlayer = gap_GamePlayer
+	where
+		gap_Game = @game;
+		
+	delete from
+		det_GamePlayers
+	where
+		gap_Game = @game;
+	
+	update det_Games set
+		gam_Started = 0,
+		gam_Player = null,
+		gam_Actor = null,
+		gam_Weapon = null,
+		gam_Room = null,
+		gam_ShowColor = null,
+		gam_Type = null,
+		gam_Subtype = null
+	where
+		gam_Game = @game;
+end;
+go
+
+declare @o varchar(100); set @o = 'det_p_ClearShow';
+if object_id(@o, 'P') is not null begin
+	declare @d nvarchar(250); set @d = 'drop procedure ' + @o;
+	execute sp_executesql @d;
+end;
+go
+create procedure det_p_ClearShow(
+	@game int
+) as
+begin
+	update det_Games set
+		gam_ShowColor = null,
+		gam_Type = null,
+		gam_Subtype = null
+	where
+		gam_Game = @game;
+end;
+go
+
+declare @o varchar(100); set @o = 'det_p_SetWinner';
+if object_id(@o, 'P') is not null begin
+	declare @d nvarchar(250); set @d = 'drop procedure ' + @o;
+	execute sp_executesql @d;
+end;
+go
+create procedure det_p_SetWinner(
+	@game int,
+	@userName varchar(100)
+) as
+begin
+	update det_GamePlayers set
+		gap_Username = @userName
 	where
 		gap_Game = @game;
 end;

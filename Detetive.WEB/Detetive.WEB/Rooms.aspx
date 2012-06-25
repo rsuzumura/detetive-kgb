@@ -20,7 +20,7 @@
                             <br />
                             <asp:Literal ID="ltStartedGame1" runat="server">JOGO NÃO INICIADO!</asp:Literal>
                             <br />
-                            <asp:Button ID="Button2" runat="server" Text="PARTICIPAR" class="btn" OnClick="btnEnter_Click"
+                            <asp:Button ID="btnEnter1" runat="server" Text="PARTICIPAR" class="btn" OnClick="btnEnter_Click"
                                 CommandArgument="1" />
                         </td>
                         <td class="room">
@@ -29,7 +29,7 @@
                             <br />
                             <asp:Literal ID="ltStartedGame2" runat="server">JOGO NÃO INICIADO!</asp:Literal>
                             <br />
-                            <asp:Button ID="Button1" runat="server" Text="PARTICIPAR" class="btn" OnClick="btnEnter_Click"
+                            <asp:Button ID="btnEnter2" runat="server" Text="PARTICIPAR" class="btn" OnClick="btnEnter_Click"
                                 CommandArgument="2" />
                         </td>
                         <td class="room">
