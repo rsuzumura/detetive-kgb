@@ -31,15 +31,6 @@ namespace Detetive.WEB {
         protected global::System.Web.UI.ScriptManager ScriptManager1;
         
         /// <summary>
-        /// timerUpdate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.Timer timerUpdate;
-        
-        /// <summary>
         /// UpdatePanelTable control.
         /// </summary>
         /// <remarks>
@@ -47,6 +38,15 @@ namespace Detetive.WEB {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanelTable;
+        
+        /// <summary>
+        /// timerUpdate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.Timer timerUpdate;
         
         /// <summary>
         /// hdnEvent control.

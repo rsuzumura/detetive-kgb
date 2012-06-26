@@ -25,67 +25,87 @@ namespace Detetive.WEB
         protected void ddlActors_SelectedIndexChanged(object sender, EventArgs e)
         {
             int actorId = 0;
-
+            int gameId = Convert.ToInt32(Request.QueryString["id"]);
             if (int.TryParse(ddlActors.SelectedValue, out actorId))
             {
-                Actor act = Actor.Get(actorId);
-                if (!act.ImageName.IsNull)
+                if (!GamePlayer.ExistsPlayer(gameId, User.Identity.Name, actorId))
                 {
-                    string path = Server.MapPath(string.Format("~/Images/Cards/{0}", act.ImageName.Value));
-                    if (!File.Exists(Server.MapPath(string.Format("~/Images/Cards/{0}", act.ImageName.Value))))
+                    Actor act = Actor.Get(actorId);
+                    if (!act.ImageName.IsNull)
                     {
-                        byte[] b = Actor.GetPhoto(act.ActorId.Value);
-                        if (b != null)
+                        string path = Server.MapPath(string.Format("~/Images/Cards/{0}", act.ImageName.Value));
+                        if (!File.Exists(Server.MapPath(string.Format("~/Images/Cards/{0}", act.ImageName.Value))))
                         {
-                            MemoryStream ms = new MemoryStream(b);
-                            FileStream file = File.Create(Server.MapPath(string.Format("~/Images/Cards/{0}", act.ImageName.Value)));
-                            ms.WriteTo(file);
-                            ms.Close();
-                            ms.Dispose();
-                            file.Close();
-                            file.Dispose();
+                            byte[] b = Actor.GetPhoto(act.ActorId.Value);
+                            if (b != null)
+                            {
+                                MemoryStream ms = new MemoryStream(b);
+                                FileStream file = File.Create(Server.MapPath(string.Format("~/Images/Cards/{0}", act.ImageName.Value)));
+                                ms.WriteTo(file);
+                                ms.Close();
+                                ms.Dispose();
+                                file.Close();
+                                file.Dispose();
+                            }
+                            b = null;
                         }
-                        b = null;
+                        imgPhoto.ImageUrl = "~/images/Cards/" + act.ImageName.Value;
                     }
-                    imgPhoto.ImageUrl = "~/images/Cards/" + act.ImageName.Value;
+                }
+                else
+                {
+                    FillControl<Actor>(ddlActors, ActorCollection.ListUnused(Convert.ToInt32(Request.QueryString["id"])));
+                    ShowMessage(MessageType.Warning, "O usuário selecionado já havia sido escolhido previamente, escolha um novo personagem.", "Atenção: Personagem já selecionado!");
                 }
             }
         }
 
         protected void btnSelect_Click(object sender, EventArgs e)
         {
+            int actorId = 0;
             int gameId = Convert.ToInt32(Request.QueryString["id"]);
-            if (btnSelect.Text == "SELECIONAR")
+            if (int.TryParse(ddlActors.SelectedValue, out actorId))
             {
-                if (hdnUpdate.Value == "0")
+                if (!GamePlayer.ExistsPlayer(gameId, User.Identity.Name, actorId))
                 {
-                    GamePlayer gp = new GamePlayer()
+                    if (btnSelect.Text == "SELECIONAR")
                     {
-                        GameId = gameId,
-                        Username = Page.User.Identity.Name,
-                        ActorId = Convert.ToInt32(ddlActors.SelectedValue),
-                        Enabled = true,
-                        Position = "",
-                        Status = 0
-                    };
-                    gp.Add();
-                    hdnUpdate.Value = gp.GamePlayerId.Value.ToString();
+                        if (hdnUpdate.Value == "0")
+                        {
+                            GamePlayer gp = new GamePlayer()
+                            {
+                                GameId = gameId,
+                                Username = Page.User.Identity.Name,
+                                ActorId = Convert.ToInt32(ddlActors.SelectedValue),
+                                Enabled = true,
+                                Position = string.Empty,
+                                Status = 0
+                            };
+                            gp.Add();
+                            hdnUpdate.Value = gp.GamePlayerId.Value.ToString();
+                        }
+                        else
+                        {
+                            GamePlayer gp = GamePlayer.Get(Convert.ToInt32(hdnUpdate.Value));
+                            gp.ActorId = Convert.ToInt32(ddlActors.SelectedValue);
+                            gp.Save();
+                        }
+                        timerUpdate.Enabled = true;
+                        ddlActors.Enabled = false;
+                        btnSelect.Text = "TROCAR";
+                    }
+                    else
+                    {
+                        ddlActors.Enabled = true;
+                        FillControl<Actor>(ddlActors, ActorCollection.ListUnused(Convert.ToInt32(Request.QueryString["id"])));
+                        btnSelect.Text = "SELECIONAR";
+                    }
                 }
                 else
                 {
-                    GamePlayer gp = GamePlayer.Get(Convert.ToInt32(hdnUpdate.Value));
-                    gp.ActorId = Convert.ToInt32(ddlActors.SelectedValue);
-                    gp.Save();
+                    FillControl<Actor>(ddlActors, ActorCollection.ListUnused(Convert.ToInt32(Request.QueryString["id"])));
+                    ShowMessage(MessageType.Warning, "O usuário selecionado já havia sido escolhido previamente, escolha um novo personagem.", "Atenção: Personagem já selecionado!");
                 }
-                timerUpdate.Enabled = true;
-                ddlActors.Enabled   = false;
-                btnSelect.Text      = "TROCAR";
-            }
-            else
-            {
-                ddlActors.Enabled = true;
-                FillControl<Actor>(ddlActors, ActorCollection.ListUnused(Convert.ToInt32(Request.QueryString["id"])));
-                btnSelect.Text = "SELECIONAR";
             }
         }
 

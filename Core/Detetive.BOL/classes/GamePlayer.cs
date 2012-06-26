@@ -91,6 +91,13 @@ namespace Detetive.BOL
         {
             SqlXmlRun.Execute("det_p_SetWinner", new SqlXmlParams("game", game, "userName", userName));
         }
+
+        public static bool ExistsPlayer(int game, string userName, int actor)
+        {
+            bool r;
+            SqlXmlRun.Execute("det_p_ExistsPlayer", out r, new SqlXmlParams("game", game, "username", userName, "actor", actor));
+            return r;
+        }
     }
 
     [XmlRoot("GamePlayers")]

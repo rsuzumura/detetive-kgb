@@ -13,10 +13,10 @@
     <form id="form1" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
-    <asp:Timer ID="timerUpdate" runat="server" Interval="10000" OnTick="timerUpdate_Tick">
-    </asp:Timer>
     <asp:UpdatePanel ID="UpdatePanelTable" runat="server">
         <ContentTemplate>
+            <asp:Timer ID="timerUpdate" runat="server" Interval="10000" OnTick="timerUpdate_Tick">
+            </asp:Timer>
             <asp:HiddenField ID="hdnEvent" runat="server" Value="" />
             <div align="center">
                 <div id="page">

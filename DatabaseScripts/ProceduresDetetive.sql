@@ -1326,3 +1326,23 @@ begin
 		gap_Game = @game;
 end;
 go
+
+declare @o varchar(100); set @o = 'det_p_ExistsPlayer';
+if object_id(@o, 'P') is not null begin
+	declare @d nvarchar(250); set @d = 'drop procedure ' + @o;
+	execute sp_executesql @d;
+end;
+go
+create procedure det_p_ExistsPlayer(
+	@game int,
+	@username varchar(100),
+	@actor int,
+	@result bit output
+) as
+begin
+	if exists (select 1 from det_GamePlayers where gap_Game = @game and gap_Actor = @actor and gap_Username <> @username)
+		set @result = 1;
+	else
+		set @result = 0;
+end;
+go
