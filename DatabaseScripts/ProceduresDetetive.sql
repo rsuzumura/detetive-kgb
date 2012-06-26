@@ -635,7 +635,8 @@ begin
 			act_Color [Color],
 			gap_AccuseActor [AccuseActorId],
 			gap_AccuseWeapon [AccuseWeaponId],
-			gap_AccuseRoom [AccuseRoomId]
+			gap_AccuseRoom [AccuseRoomId],
+			gap_Winner [Winner]
 		from
 			det_GamePlayers
 			inner join det_Actors on act_Actor = gap_Actor

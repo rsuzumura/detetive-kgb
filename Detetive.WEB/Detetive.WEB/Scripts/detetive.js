@@ -320,7 +320,7 @@ function getMAP(array) {
 
 function showLoad() {
     var divBackGround = "<div class=\"background\"></div>";
-    $("body").append(divBackGround + "<div class=\"loader\" align=\"center\">" + "<div>Aguardando Seleção de Carta...<div>" + "<div><img id=\"loader\" src=\"Images/ajax-loader.gif\" alt=\"\" /><div>" + "</div>");
+    $("body").append(divBackGround + "<div class=\"loader\" align=\"center\">" + "<div>Aguardando Seleção de Carta...<div>" + "<div style=\"margin-top: 20px; \"><img id=\"loader\" src=\"Images/ajax-loader.gif\" alt=\"\" /><div>" + "</div>");
     $("div.background").css({ opacity: 0.3 });
     var width = $("div.loader").width();
     var height = $("div.loader").height();
@@ -632,7 +632,14 @@ function exitGame() {
 }
 
 function falseAccusation() {
-    alert('A acusação feita está incorreta, você será punido com a perda de um turno e voltará para a posição inicial do tabuleiro.');
+    errorAnime();
+    setTimeout(function () {
+        $("#errorImage").attr('src', '');
+        $("div.errPanel,div.background").remove();
+    }, 10000);
+    setTimeout(function () {
+        alert('A acusação feita está incorreta, você será punido com a perda de um turno e voltará para a posição inicial do tabuleiro.');
+    }, 10000);
 }
 
 function punish() {
@@ -706,4 +713,19 @@ function notFoundUpdater() {
     $("div.showCard,div.backAccuse").remove();
     var btn = document.getElementById('btnSetUpdater');
     btn.click();
+}
+
+function errorAnime() {
+    var divBackGround = "<div class=\"background\"></div>";
+    $("body").append(divBackGround + "<div class=\"errPanel\">" + "<img id=\"errorImage\" src=\"\" alt=\"\" />" + "</div>");
+    $("#errorImage").attr('src', 'Images/falsocrime.gif');
+    $("div.background").css({ opacity: 0.3 });
+    var width = $("div.errPanel").width();
+    var height = $("div.errPanel").height();
+    var windowHeight = $(window).height();
+    var windowWidth = $(window).width();
+    var top = windowHeight / 2 - height / 2;
+    var left = windowWidth / 2 - width / 2;
+    $("div.errPanel").css({ opacity: 0, top: top - 50, left: left });
+    $("div.errPanel").animate({ opacity: 1, "top": top, "left": left }, 200);
 }

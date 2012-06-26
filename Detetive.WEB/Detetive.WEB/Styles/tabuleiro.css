@@ -283,7 +283,7 @@ div.dicePanel
     font-family:Verdana;
     width: 430px;
     min-height:160px;
-    color: #00335e;
+    color: #E5C791;
     border: none 0px;
 }
 
@@ -365,6 +365,7 @@ div.loader
 	font-size: 16pt;
 	height: 50px;
 	line-height: 50px;
+	color: #E5C791;
 	font-weight: bold;
 	vertical-align: middle;
 	font-family: Bernard MT Condensed;
@@ -379,7 +380,7 @@ div.loader
     z-index: 999;
     font-family:Verdana;
     min-height:160px;
-    color: #00335e;
+    color: #E5C791;
     -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
     border-radius: 6px;
@@ -395,6 +396,7 @@ div.loader
 	vertical-align: middle;
 	font-family: Bernard MT Condensed;
 	font-size: 16pt;
+	color: #E5C791;
 }
 
 .divFinalAccuse
@@ -454,6 +456,16 @@ div.loader
 {
 	width: 800px;
 	height: 800px;
+	padding: 4px 10px 4px 10px;
+    position: fixed;
+    z-index: 999;
+    font-family:Verdana;
+}
+
+.errPanel
+{
+	width: 1024px;
+	height: 768px;
 	padding: 4px 10px 4px 10px;
     position: fixed;
     z-index: 999;

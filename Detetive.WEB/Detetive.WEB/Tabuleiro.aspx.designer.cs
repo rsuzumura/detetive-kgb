@@ -247,6 +247,33 @@ namespace Detetive.WEB {
         protected global::System.Web.UI.WebControls.Literal actor_1;
         
         /// <summary>
+        /// questionActor_1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox questionActor_1;
+        
+        /// <summary>
+        /// suspectActor_1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox suspectActor_1;
+        
+        /// <summary>
+        /// notSuspectActor_1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox notSuspectActor_1;
+        
+        /// <summary>
         /// actor_2 control.
         /// </summary>
         /// <remarks>
@@ -254,6 +281,33 @@ namespace Detetive.WEB {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal actor_2;
+        
+        /// <summary>
+        /// questionActor_2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox questionActor_2;
+        
+        /// <summary>
+        /// suspectActor_2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox suspectActor_2;
+        
+        /// <summary>
+        /// notSuspectActor_2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox notSuspectActor_2;
         
         /// <summary>
         /// actor_3 control.
@@ -265,6 +319,33 @@ namespace Detetive.WEB {
         protected global::System.Web.UI.WebControls.Literal actor_3;
         
         /// <summary>
+        /// questionActor_3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox questionActor_3;
+        
+        /// <summary>
+        /// suspectActor_3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox suspectActor_3;
+        
+        /// <summary>
+        /// notSuspectActor_3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox notSuspectActor_3;
+        
+        /// <summary>
         /// actor_4 control.
         /// </summary>
         /// <remarks>
@@ -272,6 +353,33 @@ namespace Detetive.WEB {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal actor_4;
+        
+        /// <summary>
+        /// questionActor_4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox questionActor_4;
+        
+        /// <summary>
+        /// suspectActor_4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox suspectActor_4;
+        
+        /// <summary>
+        /// notSuspectActor_4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox notSuspectActor_4;
         
         /// <summary>
         /// actor_5 control.
@@ -283,6 +391,33 @@ namespace Detetive.WEB {
         protected global::System.Web.UI.WebControls.Literal actor_5;
         
         /// <summary>
+        /// questionActor_5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox questionActor_5;
+        
+        /// <summary>
+        /// suspectActor_5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox suspectActor_5;
+        
+        /// <summary>
+        /// notSuspectActor_5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox notSuspectActor_5;
+        
+        /// <summary>
         /// actor_6 control.
         /// </summary>
         /// <remarks>
@@ -290,6 +425,33 @@ namespace Detetive.WEB {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal actor_6;
+        
+        /// <summary>
+        /// questionActor_6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox questionActor_6;
+        
+        /// <summary>
+        /// suspectActor_6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox suspectActor_6;
+        
+        /// <summary>
+        /// notSuspectActor_6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox notSuspectActor_6;
         
         /// <summary>
         /// weapon_1 control.
@@ -301,6 +463,33 @@ namespace Detetive.WEB {
         protected global::System.Web.UI.WebControls.Literal weapon_1;
         
         /// <summary>
+        /// questionWeapon_1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox questionWeapon_1;
+        
+        /// <summary>
+        /// suspectWeapon_1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox suspectWeapon_1;
+        
+        /// <summary>
+        /// notSuspectWeapon_1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox notSuspectWeapon_1;
+        
+        /// <summary>
         /// weapon_2 control.
         /// </summary>
         /// <remarks>
@@ -308,6 +497,33 @@ namespace Detetive.WEB {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal weapon_2;
+        
+        /// <summary>
+        /// questionWeapon_2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox questionWeapon_2;
+        
+        /// <summary>
+        /// suspectWeapon_2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox suspectWeapon_2;
+        
+        /// <summary>
+        /// notSuspectWeapon_2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox notSuspectWeapon_2;
         
         /// <summary>
         /// weapon_3 control.
@@ -319,6 +535,33 @@ namespace Detetive.WEB {
         protected global::System.Web.UI.WebControls.Literal weapon_3;
         
         /// <summary>
+        /// questionWeapon_3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox questionWeapon_3;
+        
+        /// <summary>
+        /// suspectWeapon_3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox suspectWeapon_3;
+        
+        /// <summary>
+        /// notSuspectWeapon_3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox notSuspectWeapon_3;
+        
+        /// <summary>
         /// weapon_4 control.
         /// </summary>
         /// <remarks>
@@ -326,6 +569,33 @@ namespace Detetive.WEB {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal weapon_4;
+        
+        /// <summary>
+        /// questionWeapon_4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox questionWeapon_4;
+        
+        /// <summary>
+        /// suspectWeapon_4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox suspectWeapon_4;
+        
+        /// <summary>
+        /// notSuspectWeapon_4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox notSuspectWeapon_4;
         
         /// <summary>
         /// weapon_5 control.
@@ -337,6 +607,33 @@ namespace Detetive.WEB {
         protected global::System.Web.UI.WebControls.Literal weapon_5;
         
         /// <summary>
+        /// questionWeapon_5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox questionWeapon_5;
+        
+        /// <summary>
+        /// suspectWeapon_5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox suspectWeapon_5;
+        
+        /// <summary>
+        /// notSuspectWeapon_5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox notSuspectWeapon_5;
+        
+        /// <summary>
         /// weapon_6 control.
         /// </summary>
         /// <remarks>
@@ -344,6 +641,33 @@ namespace Detetive.WEB {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal weapon_6;
+        
+        /// <summary>
+        /// questionWeapon_6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox questionWeapon_6;
+        
+        /// <summary>
+        /// suspectWeapon_6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox suspectWeapon_6;
+        
+        /// <summary>
+        /// notSuspectWeapon_6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox notSuspectWeapon_6;
         
         /// <summary>
         /// room_1 control.
@@ -355,6 +679,33 @@ namespace Detetive.WEB {
         protected global::System.Web.UI.WebControls.Literal room_1;
         
         /// <summary>
+        /// questionRoom_1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox questionRoom_1;
+        
+        /// <summary>
+        /// suspectRoom_1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox suspectRoom_1;
+        
+        /// <summary>
+        /// notSuspectRoom_1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox notSuspectRoom_1;
+        
+        /// <summary>
         /// room_2 control.
         /// </summary>
         /// <remarks>
@@ -362,6 +713,33 @@ namespace Detetive.WEB {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal room_2;
+        
+        /// <summary>
+        /// questionRoom_2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox questionRoom_2;
+        
+        /// <summary>
+        /// suspectRoom_2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox suspectRoom_2;
+        
+        /// <summary>
+        /// notSuspectRoom_2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox notSuspectRoom_2;
         
         /// <summary>
         /// room_3 control.
@@ -373,6 +751,33 @@ namespace Detetive.WEB {
         protected global::System.Web.UI.WebControls.Literal room_3;
         
         /// <summary>
+        /// questionRoom_3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox questionRoom_3;
+        
+        /// <summary>
+        /// suspectRoom_3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox suspectRoom_3;
+        
+        /// <summary>
+        /// notSuspectRoom_3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox notSuspectRoom_3;
+        
+        /// <summary>
         /// room_4 control.
         /// </summary>
         /// <remarks>
@@ -380,6 +785,33 @@ namespace Detetive.WEB {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal room_4;
+        
+        /// <summary>
+        /// questionRoom_4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox questionRoom_4;
+        
+        /// <summary>
+        /// suspectRoom_4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox suspectRoom_4;
+        
+        /// <summary>
+        /// notSuspectRoom_4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox notSuspectRoom_4;
         
         /// <summary>
         /// room_5 control.
@@ -391,6 +823,33 @@ namespace Detetive.WEB {
         protected global::System.Web.UI.WebControls.Literal room_5;
         
         /// <summary>
+        /// questionRoom_5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox questionRoom_5;
+        
+        /// <summary>
+        /// suspectRoom_5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox suspectRoom_5;
+        
+        /// <summary>
+        /// notSuspectRoom_5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox notSuspectRoom_5;
+        
+        /// <summary>
         /// room_6 control.
         /// </summary>
         /// <remarks>
@@ -398,6 +857,33 @@ namespace Detetive.WEB {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal room_6;
+        
+        /// <summary>
+        /// questionRoom_6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox questionRoom_6;
+        
+        /// <summary>
+        /// suspectRoom_6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox suspectRoom_6;
+        
+        /// <summary>
+        /// notSuspectRoom_6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox notSuspectRoom_6;
         
         /// <summary>
         /// room_7 control.
@@ -409,6 +895,33 @@ namespace Detetive.WEB {
         protected global::System.Web.UI.WebControls.Literal room_7;
         
         /// <summary>
+        /// questionRoom_7 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox questionRoom_7;
+        
+        /// <summary>
+        /// suspectRoom_7 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox suspectRoom_7;
+        
+        /// <summary>
+        /// notSuspectRoom_7 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox notSuspectRoom_7;
+        
+        /// <summary>
         /// room_8 control.
         /// </summary>
         /// <remarks>
@@ -418,6 +931,33 @@ namespace Detetive.WEB {
         protected global::System.Web.UI.WebControls.Literal room_8;
         
         /// <summary>
+        /// questionRoom_8 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox questionRoom_8;
+        
+        /// <summary>
+        /// suspectRoom_8 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox suspectRoom_8;
+        
+        /// <summary>
+        /// notSuspectRoom_8 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox notSuspectRoom_8;
+        
+        /// <summary>
         /// room_9 control.
         /// </summary>
         /// <remarks>
@@ -425,6 +965,33 @@ namespace Detetive.WEB {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal room_9;
+        
+        /// <summary>
+        /// questionRoom_9 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox questionRoom_9;
+        
+        /// <summary>
+        /// suspectRoom_9 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox suspectRoom_9;
+        
+        /// <summary>
+        /// notSuspectRoom_9 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox notSuspectRoom_9;
         
         /// <summary>
         /// btnDice control.
