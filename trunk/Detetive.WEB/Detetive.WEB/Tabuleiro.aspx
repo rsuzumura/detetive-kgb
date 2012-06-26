@@ -1435,13 +1435,13 @@
                                                             <asp:Literal ID="actor_1" runat="server">Suspeito 1</asp:Literal>
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="questionActor_1" />
+                                                            <input type="checkbox" runat="server" id="questionActor_1" />
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="suspectActor_1" />
+                                                            <input type="checkbox" runat="server" id="suspectActor_1" />
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="notSuspectActor_1" />
+                                                            <input type="checkbox" runat="server" id="notSuspectActor_1" />
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -1449,13 +1449,13 @@
                                                             <asp:Literal ID="actor_2" runat="server">Suspeito 2</asp:Literal>
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="questionActor_2" />
+                                                            <input type="checkbox" runat="server" id="questionActor_2" />
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="suspectActor_2" />
+                                                            <input type="checkbox" runat="server" id="suspectActor_2" />
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="notSuspectActor_2" />
+                                                            <input type="checkbox" runat="server" id="notSuspectActor_2" />
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -1463,13 +1463,13 @@
                                                             <asp:Literal ID="actor_3" runat="server">Suspeito 3</asp:Literal>
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="questionActor_3" />
+                                                            <input type="checkbox" runat="server" id="questionActor_3" />
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="suspectActor_3" />
+                                                            <input type="checkbox" runat="server" id="suspectActor_3" />
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="notSuspectActor_3" />
+                                                            <input type="checkbox" runat="server" id="notSuspectActor_3" />
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -1477,13 +1477,13 @@
                                                             <asp:Literal ID="actor_4" runat="server">Suspeito 4</asp:Literal>
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="questionActor_4" />
+                                                            <input type="checkbox" runat="server" id="questionActor_4" />
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="suspectActor_4" />
+                                                            <input type="checkbox" runat="server" id="suspectActor_4" />
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="notSuspectActor_4" />
+                                                            <input type="checkbox" runat="server" id="notSuspectActor_4" />
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -1491,13 +1491,13 @@
                                                             <asp:Literal ID="actor_5" runat="server">Suspeito 5</asp:Literal>
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="questionActor_5" />
+                                                            <input type="checkbox" runat="server" id="questionActor_5" />
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="suspectActor_5" />
+                                                            <input type="checkbox" runat="server" id="suspectActor_5" />
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="notSuspectActor_5" />
+                                                            <input type="checkbox" runat="server" id="notSuspectActor_5" />
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -1505,13 +1505,13 @@
                                                             <asp:Literal ID="actor_6" runat="server">Suspeito 6</asp:Literal>
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="questionActor_6" />
+                                                            <input type="checkbox" runat="server" id="questionActor_6" />
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="suspectActor_6" />
+                                                            <input type="checkbox" runat="server" id="suspectActor_6" />
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="notSuspectActor_6" />
+                                                            <input type="checkbox" runat="server" id="notSuspectActor_6" />
                                                         </td>
                                                     </tr>
                                                 </tbody>
@@ -1560,13 +1560,13 @@
                                                             <asp:Literal ID="weapon_1" runat="server">Arma 1</asp:Literal>
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="questionWeapon_1" />
+                                                            <input type="checkbox" runat="server" id="questionWeapon_1" />
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="suspectWeapon_1" />
+                                                            <input type="checkbox" runat="server" id="suspectWeapon_1" />
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="notSuspectWeapon_1" />
+                                                            <input type="checkbox" runat="server" id="notSuspectWeapon_1" />
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -1574,13 +1574,13 @@
                                                             <asp:Literal ID="weapon_2" runat="server">Arma 2</asp:Literal>
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="questionWeapon_2" />
+                                                            <input type="checkbox" runat="server" id="questionWeapon_2" />
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="suspectWeapon_2" />
+                                                            <input type="checkbox" runat="server" id="suspectWeapon_2" />
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="notSuspectWeapon_2" />
+                                                            <input type="checkbox" runat="server" id="notSuspectWeapon_2" />
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -1588,13 +1588,13 @@
                                                             <asp:Literal ID="weapon_3" runat="server">Arma 3</asp:Literal>
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="questionWeapon_3" />
+                                                            <input type="checkbox" runat="server" id="questionWeapon_3" />
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="suspectWeapon_3" />
+                                                            <input type="checkbox" runat="server" id="suspectWeapon_3" />
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="notSuspectWeapon_3" />
+                                                            <input type="checkbox" runat="server" id="notSuspectWeapon_3" />
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -1602,13 +1602,13 @@
                                                             <asp:Literal ID="weapon_4" runat="server">Arma 4</asp:Literal>
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="questionWeapon_4" />
+                                                            <input type="checkbox" runat="server" id="questionWeapon_4" />
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="suspectWeapon_4" />
+                                                            <input type="checkbox" runat="server" id="suspectWeapon_4" />
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="notSuspectWeapon_4" />
+                                                            <input type="checkbox" runat="server" id="notSuspectWeapon_4" />
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -1616,13 +1616,13 @@
                                                             <asp:Literal ID="weapon_5" runat="server">Arma 5</asp:Literal>
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="questionWeapon_5" />
+                                                            <input type="checkbox" runat="server" id="questionWeapon_5" />
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="suspectWeapon_5" />
+                                                            <input type="checkbox" runat="server" id="suspectWeapon_5" />
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="notSuspectWeapon_5" />
+                                                            <input type="checkbox" runat="server" id="notSuspectWeapon_5" />
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -1630,13 +1630,13 @@
                                                             <asp:Literal ID="weapon_6" runat="server">Arma 6</asp:Literal>
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="questionWeapon_6" />
+                                                            <input type="checkbox" runat="server" id="questionWeapon_6" />
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="suspectWeapon_6" />
+                                                            <input type="checkbox" runat="server" id="suspectWeapon_6" />
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="notSuspectWeapon_6" />
+                                                            <input type="checkbox" runat="server" id="notSuspectWeapon_6" />
                                                         </td>
                                                     </tr>
                                                 </tbody>
@@ -1685,13 +1685,13 @@
                                                             <asp:Literal ID="room_1" runat="server">Banheiro</asp:Literal>
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="questionRoom_1" />
+                                                            <input type="checkbox" runat="server" id="questionRoom_1" />
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="suspectRoom_1" />
+                                                            <input type="checkbox" runat="server" id="suspectRoom_1" />
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="notSuspectRoom_1" />
+                                                            <input type="checkbox" runat="server" id="notSuspectRoom_1" />
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -1699,13 +1699,13 @@
                                                             <asp:Literal ID="room_2" runat="server">Cozinha</asp:Literal>
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="questionRoom_2" />
+                                                            <input type="checkbox" runat="server" id="questionRoom_2" />
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="suspectRoom_2" />
+                                                            <input type="checkbox" runat="server" id="suspectRoom_2" />
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="notSuspectRoom_2" />
+                                                            <input type="checkbox" runat="server" id="notSuspectRoom_2" />
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -1713,13 +1713,13 @@
                                                             <asp:Literal ID="room_3" runat="server">Hall</asp:Literal>
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="questionRoom_3" />
+                                                            <input type="checkbox" runat="server" id="questionRoom_3" />
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="suspectRoom_3" />
+                                                            <input type="checkbox" runat="server" id="suspectRoom_3" />
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="notSuspectRoom_3" />
+                                                            <input type="checkbox" runat="server" id="notSuspectRoom_3" />
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -1727,13 +1727,13 @@
                                                             <asp:Literal ID="room_4" runat="server">Quarto de Hóspedes</asp:Literal>
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="questionRoom_4" />
+                                                            <input type="checkbox" runat="server" id="questionRoom_4" />
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="suspectRoom_4" />
+                                                            <input type="checkbox" runat="server" id="suspectRoom_4" />
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="notSuspectRoom_4" />
+                                                            <input type="checkbox" runat="server" id="notSuspectRoom_4" />
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -1741,13 +1741,13 @@
                                                             <asp:Literal ID="room_5" runat="server">Quarto</asp:Literal>
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="questionRoom_5" />
+                                                            <input type="checkbox" runat="server" id="questionRoom_5" />
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="suspectRoom_5" />
+                                                            <input type="checkbox" runat="server" id="suspectRoom_5" />
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="notSuspectRoom_5" />
+                                                            <input type="checkbox" runat="server" id="notSuspectRoom_5" />
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -1755,13 +1755,13 @@
                                                             <asp:Literal ID="room_6" runat="server">Sala de Estar</asp:Literal>
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="questionRoom_6" />
+                                                            <input type="checkbox" runat="server" id="questionRoom_6" />
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="suspectRoom_6" />
+                                                            <input type="checkbox" runat="server" id="suspectRoom_6" />
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="notSuspectRoom_6" />
+                                                            <input type="checkbox" runat="server" id="notSuspectRoom_6" />
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -1769,13 +1769,13 @@
                                                             <asp:Literal ID="room_7" runat="server">Sala de Estudos</asp:Literal>
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="questionRoom_7" />
+                                                            <input type="checkbox" runat="server" id="questionRoom_7" />
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="suspectRoom_7" />
+                                                            <input type="checkbox" runat="server" id="suspectRoom_7" />
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="notSuspectRoom_7" />
+                                                            <input type="checkbox" runat="server" id="notSuspectRoom_7" />
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -1783,13 +1783,13 @@
                                                             <asp:Literal ID="room_8" runat="server">Sala de Jantar</asp:Literal>
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="questionRoom_8" />
+                                                            <input type="checkbox" runat="server" id="questionRoom_8" />
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="suspectRoom_8" />
+                                                            <input type="checkbox" runat="server" id="suspectRoom_8" />
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="notSuspectRoom_8" />
+                                                            <input type="checkbox" runat="server" id="notSuspectRoom_8" />
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -1797,13 +1797,13 @@
                                                             <asp:Literal ID="room_9" runat="server">Salão de Jogos</asp:Literal>
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="questionRoom_9" />
+                                                            <input type="checkbox" runat="server" id="questionRoom_9" />
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="suspectRoom_9" />
+                                                            <input type="checkbox" runat="server" id="suspectRoom_9" />
                                                         </td>
                                                         <td class="check">
-                                                            <input type="checkbox" id="notSuspectRoom_9" />
+                                                            <input type="checkbox" runat="server" id="notSuspectRoom_9" />
                                                         </td>
                                                     </tr>
                                                 </tbody>

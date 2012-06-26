@@ -85,6 +85,7 @@
     <Content Include="Images\dado_5.gif" />
     <Content Include="Images\dado_6.gif" />
     <Content Include="Images\dado_animado_menor.gif" />
+    <Content Include="Images\falsocrime.gif" />
     <Content Include="Images\Icons\ico_Becky.png" />
     <Content Include="Images\Icons\ico_Dwight.png" />
     <Content Include="Images\Icons\ico_Hartigan.png" />
