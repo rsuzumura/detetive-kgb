@@ -25,14 +25,14 @@
         18 cartas virtuais: 6 cartas com os suspeitos, 9 com os locais e 6 com as armas.</br>
         • 1 bloco de anotações do detetive</br> • 1 envelope virtual confidencial</br> • 1 dado
         virtual de oito faces</br></br></br> COMO PREPARAR O JOGO</br></br> 1. Acesse o site com seu
-        usuário e senham, escolha uma das salas disponíveis para jogar, selecione um dos 6 personagens
+        usuário e senha, escolha uma das salas disponíveis para jogar, selecione um dos 6 personagens
         que será seu avatar durante o jogo. Clique em "Iniciar Jogo" 
         2. O jogo irá sortear as 18 cartas em 3 grupos: o dos locais, o dos suspeitos
         e a das armas. Automaticamente será embaralhado separadamente cada grupo e, sem ninguém ver (nem
         você) colocar a carta de cima de cada grupo dentro do envelope confidencial. Essas
         3 cartas contêm a solução do caso do assassinato (o cômodo, o culpado e a arma).
-        3. O jogo irá distribuir todas as cartas, uma carta por vez para cada jogador, 
-        no sentido do relógio. Os jogadores não podem ver as cartas dos
+        3. O jogo irá distribuir todas as cartas, uma carta por vez para cada jogador
+        Os jogadores não podem ver as cartas dos
         outros. </br> Atenção! Conforme o número de jogadores, alguns podem ficar com uma
         carta a mais. Isso não altera o resultado do jogo; da mesma forma como pode facilitar
         em certos casos de dedução, em outros vai dificultar bastante essa tarefa. 
