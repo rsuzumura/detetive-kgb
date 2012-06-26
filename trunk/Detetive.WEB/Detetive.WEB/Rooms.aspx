@@ -6,11 +6,10 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
-    <asp:Timer ID="TimerUpdate" runat="server" Interval="10000" 
-        ontick="TimerUpdate_Tick">
-    </asp:Timer>
     <asp:UpdatePanel ID="UpdatePanelRooms" runat="server">
         <ContentTemplate>
+            <asp:Timer ID="TimerUpdate" runat="server" Interval="5000" OnTick="TimerUpdate_Tick">
+            </asp:Timer>
             <div>
                 <table cellspacing="20">
                     <tr>

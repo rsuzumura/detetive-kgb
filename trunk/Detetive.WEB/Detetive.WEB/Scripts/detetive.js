@@ -75,6 +75,22 @@ function randomDice(val, pos_x, pos_y) {
     hide(val, pos_x, pos_y);
 }
 
+function randomDice2(val1, val2, pos_x, pos_y) {
+    var divBackGround = "<div class=\"background\"></div>";
+    $("body").append(divBackGround + "<div class=\"dicePanel\">" + "<img id=\"dice\" src=\"\" alt=\"\" />" + "</div>");
+    $("#dice").attr('src', 'Images/dado_animado_menor.gif');
+    $("div.background").css({ opacity: 0.3 });
+    var width = $("div.dicePanel").width();
+    var height = $("div.dicePanel").height();
+    var windowHeight = $(window).height();
+    var windowWidth = $(window).width();
+    var top = windowHeight / 2 - height / 2;
+    var left = windowWidth / 2 - width / 2;
+    $("div.dicePanel").css({ opacity: 0, top: top - 50, left: left });
+    $("div.dicePanel").animate({ opacity: 1, "top": top, "left": left }, 200);
+    hide2(val1, val2, pos_x, pos_y);
+}
+
 function hide(val, pos_x, pos_y) {
     var move = val;
     if (move < 0) move = move * (-1);
@@ -101,6 +117,38 @@ function hide(val, pos_x, pos_y) {
     }, 2800);
     setTimeout(function () {
         $("#dice").attr('src', '');
+        $("div.dicePanel,div.background").remove();
+    }, 4000);
+}
+
+function hide2(val1, val2, pos_x, pos_y) {
+    var move = val1 + val2;
+    if (move < 0) move = move * (-1);
+    if (move == 0) move++;
+    setTimeout(function () {
+        $("#dice").attr('src', '');
+        $("div.dicePanel,div.background").remove();
+        var player = document.getElementById('hdnPlayer1');
+        enableMove(pos_x, pos_y, move);
+    }, 2800);
+    setTimeout(function () {
+        var divBackGround = "<div class=\"background\"></div>";
+        $("body").append(divBackGround + "<div class=\"dicePanel\">" + "<img id=\"dice\" src=\"\" alt=\"\" /><img id=\"dice2\" src=\"\" alt=\"\" />" + "</div>");
+        $("#dice").attr('src', 'Images/dado_' + val1.toString() + '.gif');
+        $("#dice2").attr('src', 'Images/dado_' + val2.toString() + '.gif');
+        $("div.background").css({ opacity: 0.3 });
+        var width = $("div.dicePanel").width();
+        var height = $("div.dicePanel").height();
+        var windowHeight = $(window).height();
+        var windowWidth = $(window).width();
+        var top = windowHeight / 2 - height / 2;
+        var left = windowWidth / 2 - width / 2;
+        $("div.dicePanel").css({ opacity: 0, top: top - 50, left: left });
+        $("div.dicePanel").animate({ opacity: 1, "top": top, "left": left }, 200);
+    }, 2800);
+    setTimeout(function () {
+        $("#dice").attr('src', '');
+        $("#dice2").attr('src', '');
         $("div.dicePanel,div.background").remove();
     }, 4000);
 }

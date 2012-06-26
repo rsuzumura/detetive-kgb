@@ -74,8 +74,9 @@ namespace Detetive.WEB
 
         protected void btnDice_Click(object sender, EventArgs e)
         {
-            Random r = new Random();
-            int dice = r.Next(1, 7);
+            Random r  = new Random();
+            int dice  = r.Next(1, 7);
+            int dice2 = r.Next(1, 7);
             int gameId = Convert.ToInt32(Request.QueryString["game"]);
             StringBuilder sb = new StringBuilder();
             GamePlayerCollection gpc = GamePlayerCollection.List(gameId);
@@ -90,7 +91,7 @@ namespace Detetive.WEB
             string val = tab.ToString();
             sb.Append("getMAP('" + val + "');");
             //dice = 20;//@TODO remover
-            sb.AppendFormat("randomDice({0}, {1}, {2});", dice, position[0], position[1]);
+            sb.AppendFormat("randomDice2({0}, {1}, {2}, {3});", dice, dice2, position[0], position[1]);
             System.Web.UI.ScriptManager.RegisterStartupScript(this, this.GetType(), "loadCards", sb.ToString(), true);
             btnDice.Enabled= btnAcusar.Enabled = false;
             TimerUpdateGame.Enabled = false;
