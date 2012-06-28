@@ -626,7 +626,7 @@ function showVictoryPanel(actor, weapon, room, userName) {
 
     setTimeout(function () {
         var divBackGround = "<div class=\"backAccuse\"></div>";
-        $("body").append(divBackGround + "<div class=\"showCard\">" + "<div class=\"showTitle\">" +
+        $("body").append(divBackGround + "<div class=\"showCard\">" + "<div class=\"showTitle\" style=\"color: #000000;\">" +
                     "Parabéns " + userName + ", você encontrou o resultado!" +
                 "</div>" +
                 "<div>" +
@@ -656,7 +656,7 @@ function showVictoryPanel(actor, weapon, room, userName) {
 
 function endGame(userName) {
     var divBackGround = "<div class=\"backAccuse\"></div>";
-    $("body").append(divBackGround + "<div class=\"showCard\">" + "<div class=\"showTitle\">" +
+    $("body").append(divBackGround + "<div class=\"showCard\">" + "<div class=\"showTitle\" style=\"color: #000000;\">" +
                 "Jogo finalizado, o jogador " + userName + " venceu." +
             "</div>" +
             "<div class=\"spaceButton\">&nbsp;</div>" +
