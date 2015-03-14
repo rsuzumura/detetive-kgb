@@ -1,0 +1,1 @@
+Trabalho de desenvolvimento baseado no jogo de tabuleiro "Detetive"
